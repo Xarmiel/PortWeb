@@ -1,0 +1,366 @@
+/* --- 1. BASE --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    margin: 0;
+    min-height: 100vh;
+    background-image: linear-gradient(#4D5482, #2E3982, #111F80);
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-bottom: 5px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h2 {
+    margin: 0;
+    color: #fff;
+}
+
+/* --- 2. LAYOUT --- */
+.app_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 20px;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+/* --- 3. SIDEBAR --- */
+.sidebar {
+    margin-top: 65px;
+    height: 18cm;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 80px;
+    padding: 1.5rem 0;
+    flex-shrink: 0;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.sidebar:hover {
+    width: 260px;
+}
+
+.sidebar_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.sidebar_element {
+    width: 100%;
+    padding: .5rem .8rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    color: #575757;
+    fill: #424242;
+    transition: background 0.3s ease;
+}
+
+.sidebar_element:not(:has(.sidebar_icon-logo, .sidebar_avatar-title)):hover {
+    color: #fff;
+    fill: #fff;
+    background-color: #292F63;
+    cursor: pointer;
+}
+
+.sidebar_link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar_icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.sidebar_hide {
+    width: fit-content;
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+    margin-left: 2rem;
+}
+
+.sidebar:hover .sidebar_hide {
+    opacity: 1;
+}
+
+.sidebar_element-avatar {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+}
+
+.sidebar_avatar-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.sidebar_avatar-title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    white-space: nowrap;
+}
+
+.sidebar_avatar-text {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+    white-space: nowrap;
+}
+
+/* --- 4. CONTENIDO --- */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    min-width: 0;
+}
+
+.projects_header {
+    margin-bottom: 2rem;
+}
+
+.projects_header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.projects_subtitle {
+    margin: 0;
+    color: #c5c9e8;
+    font-size: 0.95rem;
+}
+
+/* --- 5. RADIO INPUTS OCULTOS --- */
+input[type="radio"] {
+    display: none;
+}
+
+/* --- 6. CARRUSEL 3D --- */
+.carousel_section {
+    width: 100%;
+}
+
+.scene {
+    perspective: 1000px;
+    width: 100%;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Estado por defecto de todas las tarjetas */
+.card_3d {
+    position: absolute;
+    width: 420px;
+    height: 280px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    overflow: hidden;
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.55s ease;
+    opacity: 0;
+    transform: translateX(500px) translateZ(-300px) rotateY(-30deg) scale(0.75);
+}
+
+.card_3d img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card_label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 16px;
+    background: rgba(17, 31, 128, 0.75);
+}
+
+.card_label-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.card_label-location {
+    margin: 3px 0 0 0;
+    font-size: 0.8rem;
+    color: #c5c9e8;
+}
+
+/* --- SLIDE 1 ACTIVO --- */
+#s1:checked ~ .carousel_section .scene #card1 {
+    opacity: 1;
+    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
+    z-index: 3;
+}
+#s1:checked ~ .carousel_section .scene #card2 {
+    opacity: 0.6;
+    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
+    z-index: 2;
+}
+#s1:checked ~ .carousel_section .scene #card3 {
+    opacity: 0.6;
+    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
+    z-index: 2;
+}
+
+/* --- SLIDE 2 ACTIVO --- */
+#s2:checked ~ .carousel_section .scene #card2 {
+    opacity: 1;
+    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
+    z-index: 3;
+}
+#s2:checked ~ .carousel_section .scene #card3 {
+    opacity: 0.6;
+    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
+    z-index: 2;
+}
+#s2:checked ~ .carousel_section .scene #card1 {
+    opacity: 0.6;
+    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
+    z-index: 2;
+}
+
+/* --- SLIDE 3 ACTIVO --- */
+#s3:checked ~ .carousel_section .scene #card3 {
+    opacity: 1;
+    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
+    z-index: 3;
+}
+#s3:checked ~ .carousel_section .scene #card1 {
+    opacity: 0.6;
+    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
+    z-index: 2;
+}
+#s3:checked ~ .carousel_section .scene #card2 {
+    opacity: 0.6;
+    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
+    z-index: 2;
+}
+
+/* --- 7. FLECHAS --- */
+.nav_arrows {
+    position: relative;
+    height: 0;
+}
+
+.arrow_group {
+    display: none;
+    justify-content: space-between;
+    padding: 0 2rem;
+    position: relative;
+    top: -235px;
+}
+
+.arrow {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.arrow:hover {
+    background: #292F63;
+    border-color: #fff;
+}
+
+#s1:checked ~ .carousel_section .nav_arrows #arrows1 { display: flex; }
+#s2:checked ~ .carousel_section .nav_arrows #arrows2 { display: flex; }
+#s3:checked ~ .carousel_section .nav_arrows #arrows3 { display: flex; }
+
+/* --- 8. DOTS --- */
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+#s1:checked ~ .carousel_section .dots label:nth-child(1),
+#s2:checked ~ .carousel_section .dots label:nth-child(2),
+#s3:checked ~ .carousel_section .dots label:nth-child(3) {
+    background: #fff;
+    width: 22px;
+    border-radius: 4px;
+}
+
+/* --- 9. RESPONSIVE --- */
+@media (max-width: 1100px) {
+    .card_3d {
+        width: 320px;
+        height: 220px;
+    }
+    .arrow_group {
+        top: -185px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar { width: 60px; }
+    .sidebar_hide, .sidebar_footer { display: none; }
+    .card_3d { width: 240px; height: 170px; }
+    .arrow_group { top: -145px; }
+}
