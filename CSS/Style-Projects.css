@@ -1,66 +1,65 @@
 /* --- 1. BASE --- */
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Hace que el desplazamiento sea fluido */
 }
 
 body {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
-    margin: 0;
-    min-height: 100vh;
-    background-image: linear-gradient(#4D5482, #2E3982, #111F80);
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
+    font-family: "Ubuntu", sans-serif; /* Define la tipografía del documento */
+    font-weight: 500; /* Define el grosor de la fuente */
+    margin: 0; /* Elimina el espacio externo predeterminado del navegador */
+    min-height: 100vh; /* Asegura que el cuerpo mida al menos el alto total de la pantalla */
+    background: #0e0e0f; /* Crea un fondo con degradado de colores */
+    background-size: cover; /* Ajusta el fondo para que cubra todo el contenedor */
+    background-attachment: fixed; /* Mantiene el fondo estático al hacer scroll */
+    display: flex; /* Activa el modelo de caja flexible para alinear elementos */
+    flex-direction: column; /* Alinea los elementos hijos de forma vertical */
 }
 
 header {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    border-bottom: 5px solid #fff;
+    width: 100%; /* Define el ancho al total disponible */
+    box-sizing: border-box; /* Incluye el marign y bordes dentro del ancho total del elemento */
+    padding-top: 2rem; /* Espacio entre la parte superior y el contenido */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Alinea el contenido horizontalmente al centro en flex */
+    align-items: center; /* Alinea el contenido verticalmente al centro en flex */
 }
 
 header h2 {
-    margin: 0;
-    color: #fff;
+    margin: 0; /* Reinicia los márgenes por defecto del título */
+    color: #E8E8E8; /* Define el color del texto */
 }
 
 /* --- 2. LAYOUT --- */
 .app_container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Alinea los elementos hijos de forma horizontal */
     width: 100%;
-    padding: 20px;
-    gap: 30px;
+    padding: 1.5rem;
+    gap: 2rem; /* Define el espacio de separación entre elementos hijos */
     box-sizing: border-box;
 }
 
-/* --- 3. SIDEBAR --- */
+/* --- 3. SIDEBAR (Estructura Original) --- */
 .sidebar {
-    margin-top: 65px;
-    height: 18cm;
-    background-color: #fff;
-    border-radius: 10px;
-    width: 80px;
+    margin-top: 65px; /* Crea un margen superior externo */
+    height: 18cm; /* Define una altura fija en centímetros */
+    background-color: #1F1F1F; /* Define el color de fondo */
+    border-radius: 10px; /* Redondea las esquinas del contenedor */
+    width: 80px; /* Estado cerrado */
     padding: 1.5rem 0;
-    flex-shrink: 0;
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0; /* Evita que el elemento se encoja si falta espacio en el contenedor flex */
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Suaviza el cambio de ancho con una curva de velocidad */
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga de los límites del contenedor */
 }
 
 .sidebar:hover {
-    width: 260px;
+    width: 260px; /* Estado abierto */
 }
 
 .sidebar_list {
-    list-style: none;
+    list-style: none; /* Elimina los puntos o viñetas de la lista */
     padding: 0;
     margin: 0;
     height: 100%;
@@ -75,17 +74,17 @@ header h2 {
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    color: #575757;
-    fill: #424242;
+    color: #fff;
+    fill: #fff; /* Define el color de relleno para elementos SVG (iconos) */
     transition: background 0.3s ease;
 }
 
 .sidebar_element:not(:has(.sidebar_icon-logo, .sidebar_avatar-title)):hover {
-    color: #fff;
-    fill: #fff;
-    background-color: #292F63;
-    cursor: pointer;
-}
+   color: #B8B8B8;
+   fill: #B8B8B8;
+   background-color: #363636;
+   cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+}   
 
 .sidebar_link {
     text-decoration: none;
@@ -104,19 +103,19 @@ header h2 {
 }
 
 .sidebar_hide {
-    width: fit-content;
-    opacity: 0;
-    white-space: nowrap;
+    width: fit-content; /* Ajusta el ancho automáticamente al tamaño del contenido interno */
+    opacity: 0; /* Hace que el elemento sea totalmente transparente */
+    white-space: nowrap; /* Evita que el texto salte a una nueva línea */
     transition: opacity 0.3s ease;
     margin-left: 2rem;
 }
 
 .sidebar:hover .sidebar_hide {
-    opacity: 1;
+    opacity: 1; /* Hace que el elemento sea totalmente visible */
 }
 
 .sidebar_element-avatar {
-    margin-top: auto;
+    margin-top: auto; /* Empuja el elemento hacia el final del contenedor flex vertical */
     width: 100%;
     display: flex;
     align-items: center;
@@ -126,16 +125,15 @@ header h2 {
 .sidebar_avatar-icon {
     width: 45px;
     height: 45px;
-    object-fit: cover;
-    border-radius: 50%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el área sin deformarse */
+    border-radius: 50%; /* Convierte el contenedor en un círculo perfecto */
     flex-shrink: 0;
 }
 
 .sidebar_avatar-title {
     margin: 0;
-    font-size: 1.4rem;
+    font-size: 1.4rem; /* Define el tamaño de la fuente */
     font-weight: 700;
-    color: #333;
     white-space: nowrap;
 }
 
