@@ -144,3 +144,11 @@ header h2 {
     white-space: nowrap;
 }
 
+/* --- 4. CONTENT --- */
+
+.content {
+    padding: 2rem; /* Agrega espacio interno alrededor del contenido */
+    box-sizing: border-box; /* Incluye el padding dentro del ancho total del elemento */
+    color: #E8E8E8; /* Define el color del texto dentro del contenido */
+}
+
