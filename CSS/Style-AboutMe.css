@@ -48,12 +48,21 @@ html {
 .intro_image img {
     height: auto;
     width: 15rem;
-    border-radius: 50%; /* Redondea las esquinas del contenedor de la imagen */
+    border-radius: 50%;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.intro_image img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px #7AD4FF;
 }
 
 table {
-    border-collapse: collapse; /* Elimina el espacio entre bordes de celdas */
+    border-collapse: separate; /* Elimina el espacio entre bordes de celdas */
     border: 2px solid #334155;
+    border-radius: 10px; /* Redondea las esquinas de la tabla */
+    border-spacing: 0; /* Elimina el espacio entre celdas */
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga de los límites de la tabla */
     text-align: center;
     color: #B5D0FF;
 }
@@ -74,12 +83,13 @@ table tr:hover {
     flex: 1;
     display: flex;
     flex-direction: column;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .table_study table {
-    border-collapse: collapse; /* Elimina el espacio entre bordes de celdas */
     width: 100%;
     height: 35vh;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .table_skills {
@@ -91,4 +101,10 @@ table tr:hover {
 .table_skills table {
     width: 100%;
     height: 35vh;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.table_study table:hover, .table_skills table:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px #7AD4FF;
 }
