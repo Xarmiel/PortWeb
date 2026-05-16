@@ -1,7 +1,7 @@
 .sidebar {
     margin-top: 65px; /* Crea un margen superior externo */
     height: 18cm; /* Define una altura fija en centímetros */
-    background-color: #1F1F1F; /* Define el color de fondo */
+    background-color: #1E293B; /* Define el color de fondo */
     border-radius: 10px; /* Redondea las esquinas del contenedor */
     width: 80px; /* Estado cerrado */
     padding: 1.5rem 0;

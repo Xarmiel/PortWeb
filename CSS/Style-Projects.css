@@ -3,17 +3,6 @@ html {
     scroll-behavior: smooth; /* Hace que el desplazamiento sea fluido */
 }
 
-/* --- 2. LAYOUT --- */
-.app_container {
-    display: flex;
-    overflow: hidden; /* Evita que el contenido se desborde del contenedor */
-    flex-direction: row; /* Alinea los elementos hijos de forma horizontal */
-    width: 100%;
-    padding: 1.5rem;
-    gap: 2rem; /* Define el espacio de separación entre elementos hijos */
-    box-sizing: border-box;
-}
-
 /* --- 4. CONTENIDO --- */
 .content {
     flex: 1;

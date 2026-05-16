@@ -23,3 +23,12 @@ header h2 {
     margin: 0; /* Reinicia los márgenes por defecto del título */
     color: #F8FAFC; /* Define el color del texto */
 }
+
+.app_container {
+    display: flex;
+    flex-direction: row; /* Alinea los elementos hijos de forma horizontal */
+    width: 100%;
+    padding: 1.5rem;
+    gap: 2rem; /* Define el espacio de separación entre elementos hijos */
+    box-sizing: border-box;
+}
