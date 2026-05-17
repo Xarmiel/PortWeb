@@ -1,0 +1,77 @@
+/* --- 4. CONTENIDO --- */
+.content {
+    flex: 1; /* Permite que el elemento crezca para ocupar todo el espacio restante */
+    display: flex;
+    flex-direction: column;
+    color: #E8E8E8;
+    transition: all 0.4s ease;
+    min-width: 0; /* Asegura que el contenedor pueda encogerse correctamente en contextos flex */
+}
+
+.contacto_contenido {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.contacto_info p {
+  color: #475569;
+  margin-bottom: 22px;
+}
+
+.contacto_lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #475569;
+}
+
+.contacto_lista a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+
+/* Formulario */
+.contacto_form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form_grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form_grupo label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.form_grupo input,
+.form_grupo textarea {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: system-ui, Arial, sans-serif;
+  color: #1e293b;
+  background-color: #f8fafc;
+  outline: none;
+}
+
+.form_grupo input:focus,
+.form_grupo textarea:focus {
+  border-color: #3b82f6;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.form_grupo textarea {
+  resize: vertical;
+}

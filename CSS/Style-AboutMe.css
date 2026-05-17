@@ -1,37 +1,72 @@
 /* --- 1. BASE --- */
 html {
-    scroll-behavior: smooth; /* Hace que el desplazamiento sea fluido */
+    scroll-behavior: smooth;
+    /* Hace que el desplazamiento sea fluido */
 }
+
 /* --- 3. CONTENT --- */
 
 .content {
-    flex: 1; /* Permite que el elemento crezca para ocupar todo el espacio restante */
+    flex: 1;
+    /* Permite que el elemento crezca para ocupar todo el espacio restante */
     display: flex;
     flex-direction: column;
     color: #E8E8E8;
     transition: all 0.4s ease;
-    min-width: 0; /* Asegura que el contenedor pueda encogerse correctamente en contextos flex */
+    min-width: 0;
+    /* Asegura que el contenedor pueda encogerse correctamente en contextos flex */
 }
 
 .content_header {
     display: flex;
     gap: 2rem;
-    align-items: stretch; /* Alinea los elementos hijos para que se estiren a lo largo del eje transversal */
-    justify-content: space-between; /* Distribuye el espacio entre los elementos hijos, dejando el máximo espacio posible entre ellos */
+    align-items: stretch;
+    /* Alinea los elementos hijos para que se estiren a lo largo del eje transversal */
+    justify-content: space-between;
+    /* Distribuye el espacio entre los elementos hijos, dejando el máximo espacio posible entre ellos */
 }
 
 .intro_text {
-    flex: 1; /* Permite que esta sección crezca para ocupar el doble del espacio en comparación con otros elementos flexibles */
+    padding-top: 2.5rem;
+    flex: 1;
+    /* Permite que esta sección crezca para ocupar el doble del espacio en comparación con otros elementos flexibles */
     display: flex;
     flex-direction: column;
-    text-align: justify; /* Alinea el texto de forma que los bordes izquierdo y derecho sean rectos */
+    text-align: justify;
+    /* Alinea el texto de forma que los bordes izquierdo y derecho sean rectos */
+}
+
+.intro_text h1 {
+    text-align: center;
+    /* Alinea el título al inicio del contenedor */
+    margin: 0 0 0.5rem 0;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.intro_text h1:hover {
+    cursor: default;
+    transform: scale(1.1);
+}
+
+.intro_text p {
+    line-height: 1.5;
+    /* Mejora la legibilidad al aumentar el espacio entre líneas */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.intro_text p:hover {
+    cursor: default;
+    transform: scale(1.02);
 }
 
 .intro_image {
-    flex: 0; /* Permite que esta sección crezca para ocupar el mismo espacio que otros elementos flexibles */
+    flex: 0;
+    /* Permite que esta sección crezca para ocupar el mismo espacio que otros elementos flexibles */
     display: flex;
-    justify-content: center; /* Alinea la imagen horizontalmente al centro */
-    align-items: center; /* Alinea la imagen verticalmente al centro */
+    justify-content: center;
+    /* Alinea la imagen horizontalmente al centro */
+    align-items: center;
+    /* Alinea la imagen verticalmente al centro */
 }
 
 .intro_image img {
@@ -47,11 +82,15 @@ html {
 }
 
 table {
-    border-collapse: separate; /* Elimina el espacio entre bordes de celdas */
+    border-collapse: separate;
+    /* Elimina el espacio entre bordes de celdas */
     border: 2px solid #334155;
-    border-radius: 10px; /* Redondea las esquinas de la tabla */
-    border-spacing: 0; /* Elimina el espacio entre celdas */
-    overflow: hidden; /* Oculta cualquier contenido que sobresalga de los límites de la tabla */
+    border-radius: 10px;
+    /* Redondea las esquinas de la tabla */
+    border-spacing: 0;
+    /* Elimina el espacio entre celdas */
+    overflow: hidden;
+    /* Oculta cualquier contenido que sobresalga de los límites de la tabla */
     text-align: center;
     color: #B5D0FF;
 }
@@ -75,25 +114,32 @@ table tr:hover {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.table_study table {
-    width: 100%;
-    height: 35vh;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
 .table_skills {
-    flex: 1; /* Permite que esta sección crezca para ocupar el mismo espacio que otros elementos flexibles */
+    flex: 1;
+    /* Permite que esta sección crezca para ocupar el mismo espacio que otros elementos flexibles */
     display: flex;
     flex-direction: column;
 }
 
+.table_study table,
 .table_skills table {
     width: 100%;
     height: 35vh;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.table_study table:hover, .table_skills table:hover {
+.table_skills h2,
+.table_study h2 {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.table_skills h2:hover,
+.table_study h2:hover {
+    transform: translateX(8px);
+}
+
+.table_study table:hover,
+.table_skills table:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 10px #7AD4FF;
 }

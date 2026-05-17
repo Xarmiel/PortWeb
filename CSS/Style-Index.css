@@ -52,6 +52,9 @@ html {
     display: block; /* Elimina el espacio extra debajo de las imágenes (comportamiento de bloque) */
 }
 
+
+
+
 .card_content {
     width: 100%;
     padding: 20px;
