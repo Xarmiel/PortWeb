@@ -19,7 +19,8 @@ header {
     align-items: center; /* Alinea el contenido verticalmente al centro en flex */
 }
 
-header h2 {
+header p {
+    font-size: 1.3rem; /* Define el tamaño de la fuente del encabezado */
     margin: 0; /* Reinicia los márgenes por defecto del título */
     color: #F8FAFC; /* Define el color del texto */
 }
@@ -31,4 +32,17 @@ header h2 {
     padding: 1.5rem;
     gap: 2rem; /* Define el espacio de separación entre elementos hijos */
     box-sizing: border-box;
+}
+
+footer {
+    background-color: #030F29; /* Define el color de fondo del pie de página */
+    width: 100%;
+    text-align: center; /* Alinea el texto al centro */
+}
+
+footer p {
+    font-size: 0.9rem; /* Define el tamaño de la fuente del pie de página */
+    margin: 0; /* Reinicia los márgenes por defecto del título */
+    padding: 1rem; /* Agrega espacio interno alrededor del texto */
+    color: #7F8799; /* Define el color del texto */
 }

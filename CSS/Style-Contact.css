@@ -1,45 +1,61 @@
 /* --- 4. CONTENIDO --- */
 .content {
-    flex: 1; /* Permite que el elemento crezca para ocupar todo el espacio restante */
-    display: flex;
-    flex-direction: column;
-    color: #E8E8E8;
-    transition: all 0.4s ease;
-    min-width: 0; /* Asegura que el contenedor pueda encogerse correctamente en contextos flex */
-}
-
-.contacto_contenido {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.contacto_info p {
-  color: #475569;
-  margin-bottom: 22px;
-}
-
-.contacto_lista {
-  list-style: none;
+  flex: 1;
+  /* Permite que el elemento crezca para ocupar todo el espacio restante */
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  color: #475569;
+  color: #E8E8E8;
+  transition: all 0.4s ease;
+  min-width: 0;
+  /* Asegura que el contenedor pueda encogerse correctamente en contextos flex */
 }
-
-.contacto_lista a {
-  color: #3b82f6;
-  text-decoration: none;
-}
-
 
 /* Formulario */
+.contacto_info {
+  padding-top: 2rem;
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.contacto_card {
+  background-color: #111E38;
+  padding: 20px;
+  border: 2px solid #192645;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.contacto_card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 2px 6px #7AD4FF;
+}
+
 .contacto_form {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 40rem;
 }
+
+.contacto_form h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
+}
+
+.contacto_form p {
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+  color: #c5c9e8;
+}
+
+
 
 .form_grupo {
   display: flex;
@@ -50,7 +66,7 @@
 .form_grupo label {
   font-size: 14px;
   font-weight: 500;
-  color: #374151;
+  color: #c5c9e8;
 }
 
 .form_grupo input,
@@ -61,7 +77,7 @@
   font-size: 14px;
   font-family: system-ui, Arial, sans-serif;
   color: #1e293b;
-  background-color: #f8fafc;
+  background-color: #D9E6FF;
   outline: none;
 }
 
@@ -72,6 +88,61 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
 
+.btn {
+  border: none;
+  align-self: center;
+  background-color: #D9E6FF;
+}
+
+.btn.btn-primario {
+  border-radius: 8px;
+  width: 15em;
+}
+
 .form_grupo textarea {
   resize: vertical;
+}
+
+.contacto_card.contacto_redes {
+  border: 3px solid #3C5BA3;
+  color: #111E38;
+  background-color: #D9E6FF;
+  padding: .4rem;
+  flex-direction: column;
+}
+
+.redes_sociales {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: .1rem;
+}
+
+.redes_sociales h3 {
+  margin: 0;
+  align-self: center;
+}
+
+.redes_list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.redes_list a, li {
+  display: flex;
+  text-decoration: none;
+}
+
+.btn.btn-secundario {
+  margin: 0 .2rem 0 .8rem;
+}
+
+.redes_list img {
+  width: 2rem;
+  height: auto;
+  transition: transform 0.3s ease;
 }

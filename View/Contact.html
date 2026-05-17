@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <h2>Bienvenidos a mi Portafolio Web</h2>
+        <p>Bienvenidos a mi Portafolio Web</p>
     </header>
 
     <div class="app_container">
@@ -102,25 +102,80 @@
 
         <main class="content">
             <h1>Contacto</h1>
-            <p>¡Gracias por visitar mi portafolio! Si deseas ponerte en contacto conmigo, puedes hacerlo a través de los
-                siguientes medios:</p>
-            <form class="contacto_form">
-                <div class="form_grupo">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" />
+            <p>¡Gracias por visitar mi portafolio! Si deseas ponerte en contacto conmigo, con mi empresa o ver más sobre mi trabajo en mis redes sociales!</p>
+            <div class="contacto_info">
+
+                <div class="contacto_card">
+                    <form class="contacto_form">
+                        <h2>Arquitecto Diego Zuñiga</h2>
+                        <p>Contacta directamente conmigo para diseñar tu obra soñada</p>
+                        <div class="form_grupo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" />
+                        </div>
+                        <div class="form_grupo">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" />
+                        </div>
+                        <div class="form_grupo">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4"
+                                placeholder="Escribe aquí tu proyección: "></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primario">Enviar mensaje</button>
+                    </form>
                 </div>
-                <div class="form_grupo">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="tu@email.com" />
+
+                <div class="contacto_card">
+                    <form class="contacto_form">
+                        <h2>Juve 3D Studio</h2>
+                        <p>Contacta con mi constructora para diseñar y construir tu objetivo</p>
+                        <div class="form_grupo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" />
+                        </div>
+                        <div class="form_grupo">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" />
+                        </div>
+                        <div class="form_grupo">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4"
+                                placeholder="Escribe aquí tu proyección: "></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primario">Enviar mensaje</button>
+                    </form>
                 </div>
-                <div class="form_grupo">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí tu proyección: "></textarea>
+
+                <div class="contacto_card contacto_redes">
+                    <div class="redes_sociales">
+                        <h3>Redes Sociales:</h3>
+                        <ul class="redes_list">
+                            <li><a href="https://www.facebook.com/ArquiJuve" target="_blank"
+                                    class="btn btn-secundario"><img src="../Recursos/Facebook.png" alt="Facebook"></a>
+                                <p>Juve 3D Studio</p>
+                            </li>
+                            <li><a href="https://www.instagram.com/ArquiJuve" target="_blank"
+                                    class="btn btn-secundario"><img src="../Recursos/Instagram.png" alt="Instagram"></a>
+                                <p>Juve 3D Studio</p>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/ArquiJuve" target="_blank"
+                                    class="btn btn-secundario"><img src="../Recursos/YouTube.png" alt="Youtube"></a>
+                                <p>Juve 3D Studio</p>
+                            </li>
+                            <li><a href="https://www.tiktok.com/@ArquiJuve" target="_blank"
+                                    class="btn btn-secundario"><img src="../Recursos/Tiktok.png" alt="Tiktok"></a>
+                                <p>Juve 3D Studio</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primario">Enviar mensaje</button>
-            </form>
+            </div>
         </main>
     </div>
+    <footer>
+        <p>&copy; 2026 Arqui Juve. Todos los derechos reservados.</p>
+    </footer>
 </body>
 
 </html>

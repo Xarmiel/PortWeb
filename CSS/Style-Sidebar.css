@@ -40,7 +40,7 @@
 .sidebar_element:not(:has(.sidebar_icon-logo, .sidebar_avatar-title)):hover {
    color: #B8B8B8;
    fill: #B8B8B8;
-   background-color: #363636;
+   background-color: #667EB0;
    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
 }   
 
