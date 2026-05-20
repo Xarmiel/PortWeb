@@ -3,7 +3,6 @@ html {
     scroll-behavior: smooth; /* Hace que el desplazamiento sea fluido */
 }
 
-/* --- 4. CONTENIDO --- */
 .content {
     flex: 1;
     display: flex;
@@ -43,9 +42,37 @@ input[type="radio"] {
 }
 
 .carrousel_title {
-    margin-top: 1rem;
-    margin-bottom: 0;
-    text-align: center;
+    margin: 2rem 0 1.2rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    padding-left: 0.75rem;
+    border-left: 4px solid #7AD4FF;
+    position: relative;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.carrousel_title:hover {
+    color: #7AD4FF;
+    transform: translateX(5px);
+    text-shadow: 0 0 8px rgba(122, 212, 255, 0.6);
+}
+
+.carrousel_title::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #7AD4FF, transparent);
+    transition: width 0.4s ease;
+}
+
+.carrousel_title:hover::before {
+    width: 100%;
 }
 
 .scene {
