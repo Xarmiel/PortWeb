@@ -13,11 +13,19 @@ html {
     min-width: 0; /* Asegura que el contenedor pueda encogerse correctamente en contextos flex */
 }
 
+.intro_section {
+    display: flex;
+    flex-direction: row;
+}
+
 .intro_text {
-    width: 100%;
     max-width: 900px; /* Define un límite máximo de ancho */
-    text-align: justify; /* Alinea el texto de forma que los bordes izquierdo y derecho sean rectos */
-    margin-bottom: 2rem;
+    text-align: center; /* Alinea el texto de forma que los bordes izquierdo y derecho sean rectos */
+    margin: 0 8rem 2rem 6rem;
+}
+
+.projects h2 {
+    text-align: center;
 }
 
 /* --- 5. CARDS DE PROYECTOS --- */
@@ -32,11 +40,12 @@ html {
     flex: 1 1 calc(35%); /* Atajo para flex-grow, flex-shrink y flex-basis */
     min-width: 400px; /* Define el ancho mínimo que debe tener el elemento */
     max-width: 100%;
-    background-color: #121B4D;
+    background-color: #1A2747;
     border: 2px solid #000;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    border-radius: 20px;
     transition: all 0.4s ease-in-out;
 }
 
@@ -51,9 +60,6 @@ html {
     object-fit: cover;
     display: block; /* Elimina el espacio extra debajo de las imágenes (comportamiento de bloque) */
 }
-
-
-
 
 .card_content {
     width: 100%;
@@ -76,6 +82,11 @@ html {
     margin: 5px 0 0 0;
     color: #bbb;
     font-size: 0.9rem;
+}
+
+.contact {
+    margin-top: 2rem;
+    text-align: center;
 }
 
 /* --- 6. RESPONSIVE --- */

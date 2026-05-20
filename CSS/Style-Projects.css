@@ -36,14 +36,23 @@ input[type="radio"] {
 }
 
 /* --- 6. CARRUSEL 3D --- */
-.carousel_section {
+.carrousel_sectionc, .carrousel_sectionb, .carrousel_section {
     width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrousel_title {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    text-align: center;
 }
 
 .scene {
     perspective: 1000px;
     width: 100%;
-    height: 380px;
+    height: 300px;
+    margin-bottom: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,69 +102,69 @@ input[type="radio"] {
 }
 
 /* --- SLIDE 1 ACTIVO --- */
-#s1:checked ~ .carousel_section .scene #card1_1,
-#b1:checked ~ .carousel_sectionb .scene #card2_1,
-#c1:checked ~ .carousel_sectionc .scene #card3_1 {
+#s1:checked ~ .carrousel_section .scene #card1_1,
+#b1:checked ~ .carrousel_sectionb .scene #card2_1,
+#c1:checked ~ .carrousel_sectionc .scene #card3_1 {
     opacity: 1;
     transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
     z-index: 3;
 }
-#s1:checked ~ .carousel_section .scene #card1_2,
-#b1:checked ~ .carousel_sectionb .scene #card2_2,
-#c1:checked ~ .carousel_sectionc .scene #card3_2 {
+#s1:checked ~ .carrousel_section .scene #card1_2,
+#b1:checked ~ .carrousel_sectionb .scene #card2_2,
+#c1:checked ~ .carrousel_sectionc .scene #card3_2 {
     opacity: 0.6;
     transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
     z-index: 2;
 }
-#s1:checked ~ .carousel_section .scene #card1_3,
-#b1:checked ~ .carousel_sectionb .scene #card2_3,
-#c1:checked ~ .carousel_sectionc .scene #card3_3 {
+#s1:checked ~ .carrousel_section .scene #card1_3,
+#b1:checked ~ .carrousel_sectionb .scene #card2_3,
+#c1:checked ~ .carrousel_sectionc .scene #card3_3 {
     opacity: 0.6;
     transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
     z-index: 2;
 }
 
 /* --- SLIDE 2 ACTIVO --- */
-#s2:checked ~ .carousel_section .scene #card1_2,
-#b2:checked ~ .carousel_sectionb .scene #card2_2,
-#c2:checked ~ .carousel_sectionc .scene #card3_2 {
+#s2:checked ~ .carrousel_section .scene #card1_2,
+#b2:checked ~ .carrousel_sectionb .scene #card2_2,
+#c2:checked ~ .carrousel_sectionc .scene #card3_2 {
     opacity: 1;
     transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
     z-index: 3;
 }
-#s2:checked ~ .carousel_section .scene #card1_3,
-#b2:checked ~ .carousel_sectionb .scene #card2_3,
-#c2:checked ~ .carousel_sectionc .scene #card3_3 {
+#s2:checked ~ .carrousel_section .scene #card1_3,
+#b2:checked ~ .carrousel_sectionb .scene #card2_3,
+#c2:checked ~ .carrousel_sectionc .scene #card3_3 {
     opacity: 0.6;
     transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
     z-index: 2;
 }
-#s2:checked ~ .carousel_section .scene #card1_1,
-#b2:checked ~ .carousel_sectionb .scene #card2_1,
-#c2:checked ~ .carousel_sectionc .scene #card3_1 {
+#s2:checked ~ .carrousel_section .scene #card1_1,
+#b2:checked ~ .carrousel_sectionb .scene #card2_1,
+#c2:checked ~ .carrousel_sectionc .scene #card3_1 {
     opacity: 0.6;
     transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
     z-index: 2;
 }
 
 /* --- SLIDE 3 ACTIVO --- */
-#s3:checked ~ .carousel_section .scene #card1_3,
-#b3:checked ~ .carousel_sectionb .scene #card2_3,
-#c3:checked ~ .carousel_sectionc .scene #card3_3 {
+#s3:checked ~ .carrousel_section .scene #card1_3,
+#b3:checked ~ .carrousel_sectionb .scene #card2_3,
+#c3:checked ~ .carrousel_sectionc .scene #card3_3 {
     opacity: 1;
     transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
     z-index: 3;
 }
-#s3:checked ~ .carousel_section .scene #card1_1,
-#b3:checked ~ .carousel_sectionb .scene #card2_1,
-#c3:checked ~ .carousel_sectionc .scene #card3_1 {
+#s3:checked ~ .carrousel_section .scene #card1_1,
+#b3:checked ~ .carrousel_sectionb .scene #card2_1,
+#c3:checked ~ .carrousel_sectionc .scene #card3_1 {
     opacity: 0.6;
     transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
     z-index: 2;
 }
-#s3:checked ~ .carousel_section .scene #card1_2,
-#b3:checked ~ .carousel_sectionb .scene #card2_2,
-#c3:checked ~ .carousel_sectionc .scene #card3_2 {
+#s3:checked ~ .carrousel_section .scene #card1_2,
+#b3:checked ~ .carrousel_sectionb .scene #card2_2,
+#c3:checked ~ .carrousel_sectionc .scene #card3_2 {
     opacity: 0.6;
     transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
     z-index: 2;
@@ -195,15 +204,15 @@ input[type="radio"] {
     border-color: #fff;
 }
 
-#s1:checked ~ .carousel_section .nav_arrows #arrows1 { display: flex; }
-#b1:checked ~ .carousel_sectionb .nav_arrows #arrows1 { display: flex; }
-#c1:checked ~ .carousel_sectionc .nav_arrows #arrows1 { display: flex; }
-#s2:checked ~ .carousel_section .nav_arrows #arrows2 { display: flex; }
-#b2:checked ~ .carousel_sectionb .nav_arrows #arrows2 { display: flex; }
-#c2:checked ~ .carousel_sectionc .nav_arrows #arrows2 { display: flex; }
-#s3:checked ~ .carousel_section .nav_arrows #arrows3 { display: flex; }
-#b3:checked ~ .carousel_sectionb .nav_arrows #arrows3 { display: flex; }
-#c3:checked ~ .carousel_sectionc .nav_arrows #arrows3 { display: flex; }
+#s1:checked ~ .carrousel_section .nav_arrows #arrows1 { display: flex; }
+#b1:checked ~ .carrousel_sectionb .nav_arrows #arrows1 { display: flex; }
+#c1:checked ~ .carrousel_sectionc .nav_arrows #arrows1 { display: flex; }
+#s2:checked ~ .carrousel_section .nav_arrows #arrows2 { display: flex; }
+#b2:checked ~ .carrousel_sectionb .nav_arrows #arrows2 { display: flex; }
+#c2:checked ~ .carrousel_sectionc .nav_arrows #arrows2 { display: flex; }
+#s3:checked ~ .carrousel_section .nav_arrows #arrows3 { display: flex; }
+#b3:checked ~ .carrousel_sectionb .nav_arrows #arrows3 { display: flex; }
+#c3:checked ~ .carrousel_sectionc .nav_arrows #arrows3 { display: flex; }
 
 /* --- 8. DOTS --- */
 .dots {
@@ -222,15 +231,15 @@ input[type="radio"] {
     transition: all 0.25s ease;
 }
 
-#s1:checked ~ .carousel_section .dots label:nth-child(1),
-#s2:checked ~ .carousel_section .dots label:nth-child(2),
-#s3:checked ~ .carousel_section .dots label:nth-child(3),
-#b1:checked ~ .carousel_sectionb .dots label:nth-child(1),
-#b2:checked ~ .carousel_sectionb .dots label:nth-child(2),
-#b3:checked ~ .carousel_sectionb .dots label:nth-child(3),
-#c1:checked ~ .carousel_sectionc .dots label:nth-child(1),
-#c2:checked ~ .carousel_sectionc .dots label:nth-child(2),
-#c3:checked ~ .carousel_sectionc .dots label:nth-child(3) {
+#s1:checked ~ .carrousel_section .dots label:nth-child(1),
+#s2:checked ~ .carrousel_section .dots label:nth-child(2),
+#s3:checked ~ .carrousel_section .dots label:nth-child(3),
+#b1:checked ~ .carrousel_sectionb .dots label:nth-child(1),
+#b2:checked ~ .carrousel_sectionb .dots label:nth-child(2),
+#b3:checked ~ .carrousel_sectionb .dots label:nth-child(3),
+#c1:checked ~ .carrousel_sectionc .dots label:nth-child(1),
+#c2:checked ~ .carrousel_sectionc .dots label:nth-child(2),
+#c3:checked ~ .carrousel_sectionc .dots label:nth-child(3) {
     background: #fff;
     width: 22px;
     border-radius: 4px;

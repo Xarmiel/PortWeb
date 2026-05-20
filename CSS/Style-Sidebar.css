@@ -10,6 +10,8 @@
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Oculta cualquier contenido que sobresalga de los límites del contenedor */
+    position: sticky; /* Fija la barra lateral en su posición, incluso al desplazarse */
+    top: 8rem; /* Define la distancia desde la parte superior de la ventana para el posicionamiento sticky */
 }
 
 .sidebar:hover {
