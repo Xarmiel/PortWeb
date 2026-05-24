@@ -36,7 +36,7 @@ input[type="radio"] {
 }
 
 /* --- 6. CARRUSEL 3D --- */
-.carrousel_sectionc, .carrousel_sectionb, .carrousel_section {
+.carrousel_sectionc, .carrousel_sectionb, .carrousel_section, .carrousel_sectiond {
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -245,7 +245,111 @@ input[type="radio"] {
     border-radius: 4px;
 }
 
-/* --- 9. RESPONSIVE --- */
+/* --- 9. TITULOS DE CADA SECCIÓN DEL CARRUSEL --- */
+.carousel_title {
+    margin: 2rem 0 1.2rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    padding-left: 0.75rem;
+    border-left: 4px solid #7AD4FF;
+    position: relative;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover */
+.carousel_title:hover {
+    color: #7AD4FF;
+    transform: translateX(5px);
+    text-shadow: 0 0 8px rgba(122, 212, 255, 0.6);
+}
+
+/* Línea decorativa animada */
+.carousel_title::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #7AD4FF, transparent);
+    transition: width 0.4s ease;
+}
+
+.carousel_title:hover::before {
+    width: 100%;
+}
+
+/* --- 10. INTERIORES (CARRUSEL D) --- */
+
+/* Slide 1 activo - Interiores */
+#d1:checked ~ .carrousel_sectiond .scene #card4_1 {
+    opacity: 1;
+    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
+    z-index: 3;
+}
+#d1:checked ~ .carrousel_sectiond .scene #card4_2 {
+    opacity: 0.6;
+    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
+    z-index: 2;
+}
+#d1:checked ~ .carrousel_sectiond .scene #card4_3 {
+    opacity: 0.6;
+    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
+    z-index: 2;
+}
+
+/* Slide 2 activo - Interiores */
+#d2:checked ~ .carrousel_sectiond .scene #card4_2 {
+    opacity: 1;
+    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
+    z-index: 3;
+}
+#d2:checked ~ .carrousel_sectiond .scene #card4_3 {
+    opacity: 0.6;
+    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
+    z-index: 2;
+}
+#d2:checked ~ .carrousel_sectiond .scene #card4_1 {
+    opacity: 0.6;
+    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
+    z-index: 2;
+}
+
+/* Slide 3 activo - Interiores */
+#d3:checked ~ .carrousel_sectiond .scene #card4_3 {
+    opacity: 1;
+    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
+    z-index: 3;
+}
+#d3:checked ~ .carrousel_sectiond .scene #card4_1 {
+    opacity: 0.6;
+    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
+    z-index: 2;
+}
+#d3:checked ~ .carrousel_sectiond .scene #card4_2 {
+    opacity: 0.6;
+    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
+    z-index: 2;
+}
+
+/* Flechas Interiores */
+#d1:checked ~ .carrousel_sectiond .nav_arrows #arrows4_1 { display: flex; }
+#d2:checked ~ .carrousel_sectiond .nav_arrows #arrows4_2 { display: flex; }
+#d3:checked ~ .carrousel_sectiond .nav_arrows #arrows4_3 { display: flex; }
+
+/* Dots Interiores */
+#d1:checked ~ .carrousel_sectiond .dots label:nth-child(1),
+#d2:checked ~ .carrousel_sectiond .dots label:nth-child(2),
+#d3:checked ~ .carrousel_sectiond .dots label:nth-child(3) {
+    background: #fff;
+    width: 22px;
+    border-radius: 4px;
+}
+
+/* --- 11. RESPONSIVE --- */
 @media (max-width: 1100px) {
     .card_3d {
         width: 320px;
