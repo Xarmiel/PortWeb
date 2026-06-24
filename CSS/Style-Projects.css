@@ -3,7 +3,6 @@ html {
     scroll-behavior: smooth; /* Hace que el desplazamiento sea fluido */
 }
 
-/* --- 4. CONTENIDO --- */
 .content {
     flex: 1;
     display: flex;
@@ -36,14 +35,51 @@ input[type="radio"] {
 }
 
 /* --- 6. CARRUSEL 3D --- */
-.carousel_section {
+.carrousel_sectionc, .carrousel_sectionb, .carrousel_section, .carrousel_sectiond {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrousel_title {
+    margin: 2rem 0 1.2rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    padding-left: 0.75rem;
+    border-left: 4px solid #7AD4FF;
+    position: relative;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.carrousel_title:hover {
+    color: #7AD4FF;
+    transform: translateX(5px);
+    text-shadow: 0 0 8px rgba(122, 212, 255, 0.6);
+}
+
+.carrousel_title::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #7AD4FF, transparent);
+    transition: width 0.4s ease;
+}
+
+.carrousel_title:hover::before {
     width: 100%;
 }
 
 .scene {
     perspective: 1000px;
     width: 100%;
-    height: 380px;
+    height: 300px;
+    margin-bottom: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,69 +129,69 @@ input[type="radio"] {
 }
 
 /* --- SLIDE 1 ACTIVO --- */
-#s1:checked ~ .carousel_section .scene #card1_1,
-#b1:checked ~ .carousel_sectionb .scene #card2_1,
-#c1:checked ~ .carousel_sectionc .scene #card3_1 {
+#s1:checked ~ .carrousel_section .scene #card1_1,
+#b1:checked ~ .carrousel_sectionb .scene #card2_1,
+#c1:checked ~ .carrousel_sectionc .scene #card3_1 {
     opacity: 1;
     transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
     z-index: 3;
 }
-#s1:checked ~ .carousel_section .scene #card1_2,
-#b1:checked ~ .carousel_sectionb .scene #card2_2,
-#c1:checked ~ .carousel_sectionc .scene #card3_2 {
+#s1:checked ~ .carrousel_section .scene #card1_2,
+#b1:checked ~ .carrousel_sectionb .scene #card2_2,
+#c1:checked ~ .carrousel_sectionc .scene #card3_2 {
     opacity: 0.6;
     transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
     z-index: 2;
 }
-#s1:checked ~ .carousel_section .scene #card1_3,
-#b1:checked ~ .carousel_sectionb .scene #card2_3,
-#c1:checked ~ .carousel_sectionc .scene #card3_3 {
+#s1:checked ~ .carrousel_section .scene #card1_3,
+#b1:checked ~ .carrousel_sectionb .scene #card2_3,
+#c1:checked ~ .carrousel_sectionc .scene #card3_3 {
     opacity: 0.6;
     transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
     z-index: 2;
 }
 
 /* --- SLIDE 2 ACTIVO --- */
-#s2:checked ~ .carousel_section .scene #card1_2,
-#b2:checked ~ .carousel_sectionb .scene #card2_2,
-#c2:checked ~ .carousel_sectionc .scene #card3_2 {
+#s2:checked ~ .carrousel_section .scene #card1_2,
+#b2:checked ~ .carrousel_sectionb .scene #card2_2,
+#c2:checked ~ .carrousel_sectionc .scene #card3_2 {
     opacity: 1;
     transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
     z-index: 3;
 }
-#s2:checked ~ .carousel_section .scene #card1_3,
-#b2:checked ~ .carousel_sectionb .scene #card2_3,
-#c2:checked ~ .carousel_sectionc .scene #card3_3 {
+#s2:checked ~ .carrousel_section .scene #card1_3,
+#b2:checked ~ .carrousel_sectionb .scene #card2_3,
+#c2:checked ~ .carrousel_sectionc .scene #card3_3 {
     opacity: 0.6;
     transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
     z-index: 2;
 }
-#s2:checked ~ .carousel_section .scene #card1_1,
-#b2:checked ~ .carousel_sectionb .scene #card2_1,
-#c2:checked ~ .carousel_sectionc .scene #card3_1 {
+#s2:checked ~ .carrousel_section .scene #card1_1,
+#b2:checked ~ .carrousel_sectionb .scene #card2_1,
+#c2:checked ~ .carrousel_sectionc .scene #card3_1 {
     opacity: 0.6;
     transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
     z-index: 2;
 }
 
 /* --- SLIDE 3 ACTIVO --- */
-#s3:checked ~ .carousel_section .scene #card1_3,
-#b3:checked ~ .carousel_sectionb .scene #card2_3,
-#c3:checked ~ .carousel_sectionc .scene #card3_3 {
+#s3:checked ~ .carrousel_section .scene #card1_3,
+#b3:checked ~ .carrousel_sectionb .scene #card2_3,
+#c3:checked ~ .carrousel_sectionc .scene #card3_3 {
     opacity: 1;
     transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
     z-index: 3;
 }
-#s3:checked ~ .carousel_section .scene #card1_1,
-#b3:checked ~ .carousel_sectionb .scene #card2_1,
-#c3:checked ~ .carousel_sectionc .scene #card3_1 {
+#s3:checked ~ .carrousel_section .scene #card1_1,
+#b3:checked ~ .carrousel_sectionb .scene #card2_1,
+#c3:checked ~ .carrousel_sectionc .scene #card3_1 {
     opacity: 0.6;
     transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
     z-index: 2;
 }
-#s3:checked ~ .carousel_section .scene #card1_2,
-#b3:checked ~ .carousel_sectionb .scene #card2_2,
-#c3:checked ~ .carousel_sectionc .scene #card3_2 {
+#s3:checked ~ .carrousel_section .scene #card1_2,
+#b3:checked ~ .carrousel_sectionb .scene #card2_2,
+#c3:checked ~ .carrousel_sectionc .scene #card3_2 {
     opacity: 0.6;
     transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
     z-index: 2;
@@ -195,15 +231,15 @@ input[type="radio"] {
     border-color: #fff;
 }
 
-#s1:checked ~ .carousel_section .nav_arrows #arrows1 { display: flex; }
-#b1:checked ~ .carousel_sectionb .nav_arrows #arrows1 { display: flex; }
-#c1:checked ~ .carousel_sectionc .nav_arrows #arrows1 { display: flex; }
-#s2:checked ~ .carousel_section .nav_arrows #arrows2 { display: flex; }
-#b2:checked ~ .carousel_sectionb .nav_arrows #arrows2 { display: flex; }
-#c2:checked ~ .carousel_sectionc .nav_arrows #arrows2 { display: flex; }
-#s3:checked ~ .carousel_section .nav_arrows #arrows3 { display: flex; }
-#b3:checked ~ .carousel_sectionb .nav_arrows #arrows3 { display: flex; }
-#c3:checked ~ .carousel_sectionc .nav_arrows #arrows3 { display: flex; }
+#s1:checked ~ .carrousel_section .nav_arrows #arrows1 { display: flex; }
+#b1:checked ~ .carrousel_sectionb .nav_arrows #arrows1 { display: flex; }
+#c1:checked ~ .carrousel_sectionc .nav_arrows #arrows1 { display: flex; }
+#s2:checked ~ .carrousel_section .nav_arrows #arrows2 { display: flex; }
+#b2:checked ~ .carrousel_sectionb .nav_arrows #arrows2 { display: flex; }
+#c2:checked ~ .carrousel_sectionc .nav_arrows #arrows2 { display: flex; }
+#s3:checked ~ .carrousel_section .nav_arrows #arrows3 { display: flex; }
+#b3:checked ~ .carrousel_sectionb .nav_arrows #arrows3 { display: flex; }
+#c3:checked ~ .carrousel_sectionc .nav_arrows #arrows3 { display: flex; }
 
 /* --- 8. DOTS --- */
 .dots {
@@ -222,18 +258,173 @@ input[type="radio"] {
     transition: all 0.25s ease;
 }
 
-#s1:checked ~ .carousel_section .dots label:nth-child(1),
-#s2:checked ~ .carousel_section .dots label:nth-child(2),
-#s3:checked ~ .carousel_section .dots label:nth-child(3),
-#b1:checked ~ .carousel_sectionb .dots label:nth-child(1),
-#b2:checked ~ .carousel_sectionb .dots label:nth-child(2),
-#b3:checked ~ .carousel_sectionb .dots label:nth-child(3),
-#c1:checked ~ .carousel_sectionc .dots label:nth-child(1),
-#c2:checked ~ .carousel_sectionc .dots label:nth-child(2),
-#c3:checked ~ .carousel_sectionc .dots label:nth-child(3) {
+#s1:checked ~ .carrousel_section .dots label:nth-child(1),
+#s2:checked ~ .carrousel_section .dots label:nth-child(2),
+#s3:checked ~ .carrousel_section .dots label:nth-child(3),
+#b1:checked ~ .carrousel_sectionb .dots label:nth-child(1),
+#b2:checked ~ .carrousel_sectionb .dots label:nth-child(2),
+#b3:checked ~ .carrousel_sectionb .dots label:nth-child(3),
+#c1:checked ~ .carrousel_sectionc .dots label:nth-child(1),
+#c2:checked ~ .carrousel_sectionc .dots label:nth-child(2),
+#c3:checked ~ .carrousel_sectionc .dots label:nth-child(3) {
     background: #fff;
     width: 22px;
     border-radius: 4px;
+}
+
+/* --- 9. TITULOS DE CADA SECCIÓN DEL CARRUSEL --- */
+.carousel_title {
+    margin: 2rem 0 1.2rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    padding-left: 0.75rem;
+    border-left: 4px solid #7AD4FF;
+    position: relative;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover */
+.carousel_title:hover {
+    color: #7AD4FF;
+    transform: translateX(5px);
+    text-shadow: 0 0 8px rgba(122, 212, 255, 0.6);
+}
+
+/* Línea decorativa animada */
+.carousel_title::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #7AD4FF, transparent);
+    transition: width 0.4s ease;
+}
+
+.carousel_title:hover::before {
+    width: 100%;
+}
+
+/* --- 10. INTERIORES (CARRUSEL D) --- */
+
+/* Slide 1 activo - Interiores */
+#d1:checked ~ .carrousel_sectiond .scene #card4_1 {
+    opacity: 1;
+    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
+    z-index: 3;
+}
+#d1:checked ~ .carrousel_sectiond .scene #card4_2 {
+    opacity: 0.6;
+    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
+    z-index: 2;
+}
+#d1:checked ~ .carrousel_sectiond .scene #card4_3 {
+    opacity: 0.6;
+    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
+    z-index: 2;
+}
+
+/* Slide 2 activo - Interiores */
+#d2:checked ~ .carrousel_sectiond .scene #card4_2 {
+    opacity: 1;
+    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
+    z-index: 3;
+}
+#d2:checked ~ .carrousel_sectiond .scene #card4_3 {
+    opacity: 0.6;
+    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
+    z-index: 2;
+}
+#d2:checked ~ .carrousel_sectiond .scene #card4_1 {
+    opacity: 0.6;
+    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
+    z-index: 2;
+}
+
+/* Slide 3 activo - Interiores */
+#d3:checked ~ .carrousel_sectiond .scene #card4_3 {
+    opacity: 1;
+    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
+    z-index: 3;
+}
+#d3:checked ~ .carrousel_sectiond .scene #card4_1 {
+    opacity: 0.6;
+    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
+    z-index: 2;
+}
+#d3:checked ~ .carrousel_sectiond .scene #card4_2 {
+    opacity: 0.6;
+    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
+    z-index: 2;
+}
+
+/* Flechas Interiores */
+#d1:checked ~ .carrousel_sectiond .nav_arrows #arrows4_1 { display: flex; }
+#d2:checked ~ .carrousel_sectiond .nav_arrows #arrows4_2 { display: flex; }
+#d3:checked ~ .carrousel_sectiond .nav_arrows #arrows4_3 { display: flex; }
+
+/* Dots Interiores */
+#d1:checked ~ .carrousel_sectiond .dots label:nth-child(1),
+#d2:checked ~ .carrousel_sectiond .dots label:nth-child(2),
+#d3:checked ~ .carrousel_sectiond .dots label:nth-child(3) {
+    background: #fff;
+    width: 22px;
+    border-radius: 4px;
+}
+
+.image-link {
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.image-link:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 0 3px rgba(255, 100, 0, 0.6);
+    opacity: 0.8;
+}
+
+.image-link:hover {
+    transform: scale(1.02);
+    filter: brightness(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+#residencial:target,
+#comercial:target,
+#publicas:target,
+#interiores:target {
+    animation: resaltarSeccion 1s ease-in-out;
+    scroll-margin-top: 20px; 
+}
+@keyframes resaltarSeccion {
+    0% {
+        background-color: transparent;
+        border-left-color: transparent;
+    }
+    30% {
+        background-color: rgba(122, 212, 255, 0.2);
+        border-left: 4px solid #6888c0;
+        padding-left: 10px;
+    }
+    100% {
+        background-color: transparent;
+        border-left-color: transparent;
+        padding-left: 0;
+    }
 }
 
 /* --- 9. RESPONSIVE --- */
@@ -242,14 +433,28 @@ input[type="radio"] {
         width: 320px;
         height: 220px;
     }
+
     .arrow_group {
         top: -185px;
     }
 }
 
 @media (max-width: 768px) {
-    .sidebar { width: 60px; }
-    .sidebar_hide, .sidebar_footer { display: none; }
-    .card_3d { width: 240px; height: 170px; }
-    .arrow_group { top: -145px; }
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar_hide,
+    .sidebar_footer {
+        display: none;
+    }
+
+    .card_3d {
+        width: 240px;
+        height: 170px;
+    }
+
+    .arrow_group {
+        top: -145px;
+    }
 }

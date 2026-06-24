@@ -70,15 +70,15 @@ html {
 }
 
 .intro_image img {
-    height: auto;
-    width: 15rem;
-    border-radius: 50%;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    height: auto; /* Mantiene la proporción original de la imagen */
+    width: 15rem; /* Define un ancho fijo para la imagen */
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Agrega una transición suave para transformaciones y sombras */
 }
 
 .intro_image img:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px #7AD4FF;
+    transform: translateY(-10px); /* Eleva la imagen ligeramente al pasar el cursor por encima */
+    box-shadow: 0 10px 20px #7AD4FF; /* Agrega una sombra azul brillante para resaltar la imagen */
 }
 
 table {
@@ -142,4 +142,64 @@ table tr:hover {
 .table_skills table:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 10px #7AD4FF;
+}
+
+/* --- 4. RESPONSIVE --- */
+@media (max-width: 768px) {
+    .content_header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    /* 1. El título de los párrafos */
+    .intro_text {
+        display: contents;
+        width: 98%; 
+    }
+
+    /* 2. Asignamos el ORDEN 1 al Nombre */
+    .intro_text h1 {
+        order: 1;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    /* 3. Foto */
+    .intro_image {
+        order: 2;
+        margin: 0.5rem 0;
+    }
+
+    /* 4. Descripción (párrafos) */
+    .intro_text p {
+        order: 3;
+        width: 98%; /* Para que ocupe el ancho correcto */
+        text-align: justify;
+    }
+
+    /* 5. Tablas de Habilidades y Formación Académica */
+    .table_skills {
+        order: 4;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    /* 6. Formación Académica */
+    .table_study {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .table {
+        width: 100%;
+        overflow-x: auto; /* Permite deslizar hacia los lados con el dedo */
+        display: block;
+        padding-bottom: 10px; 
+    }
+
+    table {
+        width: 100%;
+        min-width: 500px; /* Evita que las columnas se aplasten demasiado */
+    }
 }

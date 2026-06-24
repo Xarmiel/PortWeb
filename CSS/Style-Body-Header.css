@@ -46,3 +46,12 @@ footer p {
     padding: 1rem; /* Agrega espacio interno alrededor del texto */
     color: #7F8799; /* Define el color del texto */
 }
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .app_container {
+        flex-direction: column; /* Apila el contenido verticalmente */
+        padding: 1rem;
+        padding-bottom: 85px; /* IMPORTANTE: Da espacio extra abajo para que la barra no tape las tarjetas */
+        gap: 1rem;
+    }
+}
