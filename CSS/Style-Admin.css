@@ -1,0 +1,91 @@
+.admin-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.85); /* Fondo oscuro translúcido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* Siempre encima de todo */
+}
+
+.admin-modal-content {
+    background-color: #1e293b;
+    border: 2px solid #334155;
+    padding: 2.5rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    color: #f8fafc;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.admin-modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #38bdf8;
+}
+
+.form_grupo_admin {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 1.2rem;
+}
+
+.form_grupo_admin label {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.form_grupo_admin input {
+    padding: 10px;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    background-color: #0f172a;
+    color: #fff;
+    outline: none;
+    font-size: 1rem;
+}
+
+.form_grupo_admin input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+}
+
+.admin-modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.btn-admin {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn-save {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+.btn-cancel {
+    background-color: #475569;
+    color: #f8fafc;
+}
+
+/* Efecto visual opcional para identificar qué elementos son editables */
+.admin-editable:hover {
+    outline: 2px dashed #38bdf8 !important;
+    cursor: pointer;
+}

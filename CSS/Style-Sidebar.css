@@ -68,10 +68,12 @@
     white-space: nowrap; /* Evita que el texto salte a una nueva línea */
     transition: opacity 0.3s ease;
     margin-left: 2rem;
+    pointer-events: none; /* Evita que el elemento reciba eventos del mouse mientras es invisible */
 }
 
 .sidebar:hover .sidebar_hide {
     opacity: 1; /* Hace que el elemento sea totalmente visible */
+    pointer-events: auto; /* Permite que el elemento reciba eventos del mouse cuando es visible */
 }
 
 .sidebar_element-avatar {

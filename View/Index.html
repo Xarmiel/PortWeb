@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../CSS/Style-Hero.css">
+    <link rel="stylesheet" href="../CSS/Style-Admin.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
@@ -91,8 +92,9 @@
                     </a>
                 </li>
 
-                <li class="sidebar_element sidebar_element-avatar">
-                    <img src="../Recursos/Arqui.png" class="sidebar_icon sidebar_avatar-icon" alt="Foto Perfil">
+                <li class="sidebar_element sidebar_element-avatar" id="avatar-admin-btn">
+                    <img src="../Recursos/Arqui.png" id="avatar-admin-btn" class="sidebar_icon sidebar_avatar-icon"
+                        alt="Foto Perfil">
                     <div class="sidebar_hide">
                         <h3 class="sidebar_avatar-title">Diego de León</h3>
                         <p class="sidebar_avatar-text">Arquitecto</p>
@@ -102,81 +104,112 @@
         </aside>
 
         <main class="content">
-    <section class="hero">
-        <div class="hero-wrapper">
-            
-            <div class="hero-text">
-                <span class="greeting">Hola, soy</span>
-                <h1>Diego de León, Arquitecto</h1>
-                <p>Licenciado en Arquitectura con Doctorado en Ciencias en Arquitectura, con más de 20 años de experiencia, actualmente...</p>
-                
-                <div class="hero-buttons">
-                    <a href="AboutMe.html" class="btn-hero btn-hero-primary">SOBRE MI</a>
-                    <a href="Projects.html" class="btn-hero btn-hero-secondary">PROYECTOS</a>
-                </div>
-            </div>
-            
-            <div class="hero-image">
-                <img src="../Recursos/ArquiJuveHero.png" alt="Juan Pablo Gonzales Rojas" class="circle-image">
-            </div>
+            <section class="hero">
+                <div class="hero-wrapper">
 
-        </div>
-    </section>
+                    <div class="hero-text">
+                        <span class="greeting">Hola, soy</span>
+                        <h1>Diego de León, Arquitecto</h1>
+                        <p>Licenciado en Arquitectura con Doctorado en Ciencias en Arquitectura, con más de 20 años de
+                            experiencia, actualmente...</p>
+
+                        <div class="hero-buttons">
+                            <a href="AboutMe.html" class="btn-hero btn-hero-primary">SOBRE MI</a>
+                            <a href="Projects.html" class="btn-hero btn-hero-secondary">PROYECTOS</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-image">
+                        <img src="../Recursos/ArquiJuveHero.png" alt="Juan Pablo Gonzales Rojas" class="circle-image">
+                    </div>
+
+                </div>
+            </section>
 
             <div class="cards">
-                    <article class="card">
-                        <div class="card_image">
-                            <a href="Projects.html#residencial">
+                <article class="card">
+                    <div class="card_image">
+                        <a href="Projects.html#residencial">
                             <img src="../Recursos/Casas/Viviendafamiliares.png" alt="Vivienda Familiares">
-                            </a>
-                        </div>
-                        <div class="card_content">
-                            <h3 class="card_title">Vivienda Familiares</h3>
-                            <p class="card_location">Residencial</p>
-                        </div>
-                    </article>
+                        </a>
+                    </div>
+                    <div class="card_content">
+                        <h3 class="card_title">Vivienda Familiares</h3>
+                        <p class="card_location">Residencial</p>
+                    </div>
+                </article>
 
-                    <article class="card">
-                        <div class="card_image">
-                            <a href="Projects.html#comercial">
+                <article class="card">
+                    <div class="card_image">
+                        <a href="Projects.html#comercial">
                             <img src="../Recursos/Casas/Edificiocomercial.png" alt="Edificio Comercial">
-                            </a>
-                        </div>
-                        <div class="card_content">
-                            <h3 class="card_title">Edificio Comercial</h3>
-                            <p class="card_location">Comercial</p>
-                        </div>
-                    </article>
+                        </a>
+                    </div>
+                    <div class="card_content">
+                        <h3 class="card_title">Edificio Comercial</h3>
+                        <p class="card_location">Comercial</p>
+                    </div>
+                </article>
 
-                    <article class="card">
-                        <div class="card_image">
-                            <a href="Projects.html#publicas">
+                <article class="card">
+                    <div class="card_image">
+                        <a href="Projects.html#publicas">
                             <img src="../Recursos/Casas/Obraspublicas.png" alt="Obras Públicas">
-                            </a>
-                        </div>
-                        <div class="card_content">
-                            <h3 class="card_title">Obras Públicas</h3>
-                            <p class="card_location">Urbana</p>
-                        </div>
-                    </article>
+                        </a>
+                    </div>
+                    <div class="card_content">
+                        <h3 class="card_title">Obras Públicas</h3>
+                        <p class="card_location">Urbana</p>
+                    </div>
+                </article>
 
-                    <article class="card">
-                        <div class="card_image">
-                            <a href="Projects.html#interiores">
+                <article class="card">
+                    <div class="card_image">
+                        <a href="Projects.html#interiores">
                             <img src="../Recursos/Casas/Diseñodeinteriores.png" alt="Diseño de Interiores">
-                            </a>
-                        </div>
-                        <div class="card_content">
-                            <h3 class="card_title">Diseño de Interiores</h3>
-                            <p class="card_location">Interiores</p>
-                        </div>
-                    </article>
-                </div>
+                        </a>
+                    </div>
+                    <div class="card_content">
+                        <h3 class="card_title">Diseño de Interiores</h3>
+                        <p class="card_location">Interiores</p>
+                    </div>
+                </article>
+            </div>
         </main>
     </div>
+
     <footer>
         <p>&copy; 2026 Arqui Juve. Todos los derechos reservados.</p>
     </footer>
-</body>
 
+    <div id="admin-modal" class="admin-modal-overlay" style="display: none;">
+        <div class="admin-modal-content">
+            <h2>Panel de Administración</h2>
+            <form id="admin-login-form">
+                <div class="form_grupo_admin">
+                    <label for="admin-user">Usuario:</label>
+                    <input type="text" id="admin-user" required placeholder="Ingresa usuario">
+                </div>
+                <div class="form_grupo_admin">
+                    <label for="admin-pass">Contraseña:</label>
+                    <input type="password" id="admin-pass" required placeholder="Ingresa contraseña">
+                </div>
+                <p id="login-error" style="color: #ff6b6b; font-size: 0.9rem; margin: 0; min-height: 1.2rem;"></p>
+                <div class="admin-modal-buttons">
+                    <button type="submit" class="btn-admin btn-save">Ingresar</button>
+                    <button type="button" id="close-admin-modal" class="btn-admin btn-cancel">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="admin-bar"
+        style="display: none; background: #22c55e; color: white; text-align: center; padding: 10px; position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; font-weight: bold; font-family: sans-serif;">
+        Modo Administrador Activo | Haz doble clic sobre cualquier texto para editarlo o sobre una imagen para cambiar
+        su ruta.
+        <button id="btn-logout"
+            style="margin-left: 20px; background: #ef4444; color: white; border: none; padding: 3px 10px; border-radius: 4px; cursor: pointer;">Salir</button>
+    </div>
+    <script src="../JS/Admin.js"></script>
+</body>
 </html>
