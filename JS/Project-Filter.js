@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let activeFilter = "todos";
 
     function applyFilter(category) {
+        // Obtenemos el contenedor padre común de todas las secciones
+        const contenedorPadre = document.getElementById("mis-proyectos");
+
         sections.forEach((section) => {
             const matches = category === "todos" || section.dataset.category === category;
 
@@ -22,6 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         section.style.opacity = "1";
                     });
                 }
+                
+                // --- NUEVA LÓGICA DE REORDENAMIENTO ---
+                // Si seleccionamos una categoría específica (que no sea "todos"), 
+                // movemos de inmediato esa sección al principio del contenedor.
+                if (category !== "todos" && contenedorPadre) {
+                    contenedorPadre.prepend(section);
+                }
             } else {
                 section.style.opacity = "0";
                 window.setTimeout(() => {
@@ -29,6 +39,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, FADE_MS);
             }
         });
+
+        // --- OPCIONAL: Restaurar orden original al seleccionar "Todos" ---
+        // Si el usuario vuelve a presionar "Todos", es ideal restablecer el orden 
+        // natural de la maquetación basándonos en un array fijo de categorías.
+        if (category === "todos" && contenedorPadre) {
+            const ordenOriginal = ["residencial", "comercial", "publicas", "interiores"];
+            ordenOriginal.forEach(cat => {
+                const seccionCorrespondiente = contenedorPadre.querySelector(`[data-category="${cat}"]`);
+                if (seccionCorrespondiente) {
+                    contenedorPadre.appendChild(seccionCorrespondiente);
+                }
+            });
+        }
     }
 
     function closeDropdown() {

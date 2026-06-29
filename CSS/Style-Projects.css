@@ -1,57 +1,64 @@
-/* --- 1. BASE --- */
+/* ==========================================================================
+   ESTILOS GENERALES Y ESTRUCTURA DE PROYECTOS
+   ========================================================================== */
+
 html {
     scroll-behavior: smooth; /* Hace que el desplazamiento sea fluido */
 }
 
 .content {
-    flex: 1;
+    flex-grow: 1;
+    min-width: 0; 
+    overflow-x: hidden;
+}
+
+.projects_header {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.projects_header h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+.projects_subtitle {
+    font-size: 1.1rem;
+    color: #c5c9e8;
+}
+
+#mis-proyectos {
     display: flex;
     flex-direction: column;
-    color: white;
-    min-width: 0;
-    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede la altura del contenedor */
-    scroll-behavior: smooth; /* Hace que el desplazamiento sea fluido */
-}
-
-.projects_header { 
-    margin-bottom: 2rem;
-}
-
-.projects_header h1 { 
-    margin: 0 0 0.5rem 0;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.projects_subtitle { 
-    margin: 0;
-    color: #c5c9e8;
-    font-size: 0.95rem;
-}
-
-/* --- 5. RADIO INPUTS OCULTOS --- */
-input[type="radio"] { 
-    display: none;
-}
-
-/* --- 6. CARRUSEL 3D --- */
-.carrousel_sectionc, .carrousel_sectionb, .carrousel_section, .carrousel_sectiond {
+    gap: 4rem;
+    padding: 2rem 0;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   ESTRUCTURA DEL NUEVO CARRUSEL DINÁMICO
+   ========================================================================== */
+
+.carrousel_container {
+    width: 100%;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .carrousel_title {
-    margin: 2rem 0 1.2rem 0;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.8rem;
     color: #fff;
-    display: inline-block;
     padding-left: 0.75rem;
-    border-left: 4px solid #7AD4FF;
-    position: relative;
-    cursor: default;
+    margin-bottom: 1.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    border-left: 5px solid #7AD4FF;
+    padding-left: 10px;
     transition: all 0.3s ease;
+    width: fit-content;
 }
 
 .carrousel_title:hover {
@@ -76,32 +83,43 @@ input[type="radio"] {
 }
 
 .scene {
-    perspective: 1000px;
     width: 100%;
-    height: 300px;
-    margin-bottom: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    padding: 20px 0px 10px 10px;
     position: relative;
 }
 
-/* Estado por defecto de todas las tarjetas */
+/* Contenedor flexible que  alojalas tarjetas inyectadas por JS */
+.carousel_track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+    width: 100%;
+}
+
 .card_3d {
-    position: absolute;
-    width: 420px;
-    height: 280px;
-    border-radius: 10px;
-    border: 2px solid #000;
+    flex: 0 0 calc(33.333% - 1.34rem);
+    min-width: 280px;
+    background: #fff;
+    border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.55s ease;
-    opacity: 0;
-    transform: translateX(500px) translateZ(-300px) rotateY(-30deg) scale(0.75);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.card_3d:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card_3d img {
     width: 100%;
-    height: 100%;
+    max-width: 100%;
+    height: 320px;
     object-fit: cover;
     display: block;
 }
@@ -110,355 +128,102 @@ input[type="radio"] {
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
-    padding: 12px 16px;
-    background: rgba(17, 31, 128, 0.75);
+    width: 100%;
+    padding: 1.2rem;
+    background: rgba(19, 39, 172, 0.75);
 }
 
 .card_label-title {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 0 0.4rem 0;
     color: #fff;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .card_label-location {
-    margin: 3px 0 0 0;
-    font-size: 0.8rem;
-    color: #c5c9e8;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 0;
 }
 
-/* --- SLIDE 1 ACTIVO --- */
-#s1:checked ~ .carrousel_section .scene #card1_1,
-#b1:checked ~ .carrousel_sectionb .scene #card2_1,
-#c1:checked ~ .carrousel_sectionc .scene #card3_1 {
-    opacity: 1;
-    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
-    z-index: 3;
-}
-#s1:checked ~ .carrousel_section .scene #card1_2,
-#b1:checked ~ .carrousel_sectionb .scene #card2_2,
-#c1:checked ~ .carrousel_sectionc .scene #card3_2 {
-    opacity: 0.6;
-    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
-    z-index: 2;
-}
-#s1:checked ~ .carrousel_section .scene #card1_3,
-#b1:checked ~ .carrousel_sectionb .scene #card2_3,
-#c1:checked ~ .carrousel_sectionc .scene #card3_3 {
-    opacity: 0.6;
-    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
-    z-index: 2;
+/* ==========================================================================
+   NAVEGACIÓN POR PUNTOS (DOTS)
+   ========================================================================== */
+
+.dots_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+    width: 100%;
 }
 
-/* --- SLIDE 2 ACTIVO --- */
-#s2:checked ~ .carrousel_section .scene #card1_2,
-#b2:checked ~ .carrousel_sectionb .scene #card2_2,
-#c2:checked ~ .carrousel_sectionc .scene #card3_2 {
-    opacity: 1;
-    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
-    z-index: 3;
-}
-#s2:checked ~ .carrousel_section .scene #card1_3,
-#b2:checked ~ .carrousel_sectionb .scene #card2_3,
-#c2:checked ~ .carrousel_sectionc .scene #card3_3 {
-    opacity: 0.6;
-    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
-    z-index: 2;
-}
-#s2:checked ~ .carrousel_section .scene #card1_1,
-#b2:checked ~ .carrousel_sectionb .scene #card2_1,
-#c2:checked ~ .carrousel_sectionc .scene #card3_1 {
-    opacity: 0.6;
-    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
-    z-index: 2;
-}
-
-/* --- SLIDE 3 ACTIVO --- */
-#s3:checked ~ .carrousel_section .scene #card1_3,
-#b3:checked ~ .carrousel_sectionb .scene #card2_3,
-#c3:checked ~ .carrousel_sectionc .scene #card3_3 {
-    opacity: 1;
-    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
-    z-index: 3;
-}
-#s3:checked ~ .carrousel_section .scene #card1_1,
-#b3:checked ~ .carrousel_sectionb .scene #card2_1,
-#c3:checked ~ .carrousel_sectionc .scene #card3_1 {
-    opacity: 0.6;
-    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
-    z-index: 2;
-}
-#s3:checked ~ .carrousel_section .scene #card1_2,
-#b3:checked ~ .carrousel_sectionb .scene #card2_2,
-#c3:checked ~ .carrousel_sectionc .scene #card3_2 {
-    opacity: 0.6;
-    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
-    z-index: 2;
-}
-
-/* --- 7. FLECHAS --- */
-.nav_arrows {
-    position: relative;
-    height: 0;
-}
-
-.arrow_group {
-    display: none;
-    justify-content: space-between;
-    padding: 0 2rem;
-    position: relative;
-    top: -235px;
-}
-
-.arrow {
-    background: rgba(255, 255, 255, 0.15);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    color: #fff;
-    width: 40px;
-    height: 40px;
+.dot_element {
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
+    background: #e0e0e0;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot_element:hover {
+    transform: scale(1.1);
+    background: #b3b3b3;
+}
+
+.dot_element.is-active {
+    background: #22c55e;
+    /* Verde corporativo unificado con tu Modo Admin */
+    transform: scale(1.25);
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+}
+
+/* ==========================================================================
+   ESTILOS ADICIONALES PARA FLECHAS EN CONTENEDOR DE PUNTOS
+   ========================================================================== */
+
+.arrow_element {
+    background: transparent;
+    border: none;
+    color: #fff; /* Color blanco adaptado al fondo oscuro de tu portafolio */
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background 0.2s ease, border-color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
+    user-select: none;
 }
 
-.arrow:hover {
-    background: #292F63;
-    border-color: #fff;
+.arrow_element:hover:not(:disabled) {
+    color: #7AD4FF; /* Color celeste a juego con tus líneas de título */
+    transform: scale(1.15);
 }
 
-#s1:checked ~ .carrousel_section .nav_arrows #arrows1 { display: flex; }
-#b1:checked ~ .carrousel_sectionb .nav_arrows #arrows1 { display: flex; }
-#c1:checked ~ .carrousel_sectionc .nav_arrows #arrows1 { display: flex; }
-#s2:checked ~ .carrousel_section .nav_arrows #arrows2 { display: flex; }
-#b2:checked ~ .carrousel_sectionb .nav_arrows #arrows2 { display: flex; }
-#c2:checked ~ .carrousel_sectionc .nav_arrows #arrows2 { display: flex; }
-#s3:checked ~ .carrousel_section .nav_arrows #arrows3 { display: flex; }
-#b3:checked ~ .carrousel_sectionb .nav_arrows #arrows3 { display: flex; }
-#c3:checked ~ .carrousel_sectionc .nav_arrows #arrows3 { display: flex; }
-
-/* --- 8. DOTS --- */
-.dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 1.5rem;
+/* Espaciados específicos para separar las flechas de los puntos */
+.dots_container .arrow_group {
+    display: none; /* Eliminamos residuos antiguos si quedaban */
 }
 
-.dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.25s ease;
+/* Ajustes de margen cuando los puntos están activos */
+.dots_container .dot_element:first-of-type {
+    margin-left: 0.5rem;
 }
 
-#s1:checked ~ .carrousel_section .dots label:nth-child(1),
-#s2:checked ~ .carrousel_section .dots label:nth-child(2),
-#s3:checked ~ .carrousel_section .dots label:nth-child(3),
-#b1:checked ~ .carrousel_sectionb .dots label:nth-child(1),
-#b2:checked ~ .carrousel_sectionb .dots label:nth-child(2),
-#b3:checked ~ .carrousel_sectionb .dots label:nth-child(3),
-#c1:checked ~ .carrousel_sectionc .dots label:nth-child(1),
-#c2:checked ~ .carrousel_sectionc .dots label:nth-child(2),
-#c3:checked ~ .carrousel_sectionc .dots label:nth-child(3) {
-    background: #fff;
-    width: 22px;
-    border-radius: 4px;
+.dots_container .dot_element:last-of-type {
+    margin-right: 0.5rem;
 }
 
-/* --- 9. TITULOS DE CADA SECCIÓN DEL CARRUSEL --- */
-.carousel_title {
-    margin: 2rem 0 1.2rem 0;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
-    display: inline-block;
-    padding-left: 0.75rem;
-    border-left: 4px solid #7AD4FF;
-    position: relative;
-    cursor: default;
-    transition: all 0.3s ease;
-}
+/* ==========================================================================
+   FILTRO POR CATEGORIAS DE PROYECTOS
+   ========================================================================== */
 
-/* Efecto hover */
-.carousel_title:hover {
-    color: #7AD4FF;
-    transform: translateX(5px);
-    text-shadow: 0 0 8px rgba(122, 212, 255, 0.6);
-}
-
-/* Línea decorativa animada */
-.carousel_title::before {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #7AD4FF, transparent);
-    transition: width 0.4s ease;
-}
-
-.carousel_title:hover::before {
-    width: 100%;
-}
-
-/* --- 10. INTERIORES (CARRUSEL D) --- */
-
-/* Slide 1 activo - Interiores */
-#d1:checked ~ .carrousel_sectiond .scene #card4_1 {
-    opacity: 1;
-    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
-    z-index: 3;
-}
-#d1:checked ~ .carrousel_sectiond .scene #card4_2 {
-    opacity: 0.6;
-    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
-    z-index: 2;
-}
-#d1:checked ~ .carrousel_sectiond .scene #card4_3 {
-    opacity: 0.6;
-    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
-    z-index: 2;
-}
-
-/* Slide 2 activo - Interiores */
-#d2:checked ~ .carrousel_sectiond .scene #card4_2 {
-    opacity: 1;
-    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
-    z-index: 3;
-}
-#d2:checked ~ .carrousel_sectiond .scene #card4_3 {
-    opacity: 0.6;
-    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
-    z-index: 2;
-}
-#d2:checked ~ .carrousel_sectiond .scene #card4_1 {
-    opacity: 0.6;
-    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
-    z-index: 2;
-}
-
-/* Slide 3 activo - Interiores */
-#d3:checked ~ .carrousel_sectiond .scene #card4_3 {
-    opacity: 1;
-    transform: translateX(0) translateZ(0) rotateY(0deg) scale(1);
-    z-index: 3;
-}
-#d3:checked ~ .carrousel_sectiond .scene #card4_1 {
-    opacity: 0.6;
-    transform: translateX(300px) translateZ(-180px) rotateY(-20deg) scale(0.85);
-    z-index: 2;
-}
-#d3:checked ~ .carrousel_sectiond .scene #card4_2 {
-    opacity: 0.6;
-    transform: translateX(-300px) translateZ(-180px) rotateY(20deg) scale(0.85);
-    z-index: 2;
-}
-
-/* Flechas Interiores */
-#d1:checked ~ .carrousel_sectiond .nav_arrows #arrows4_1 { display: flex; }
-#d2:checked ~ .carrousel_sectiond .nav_arrows #arrows4_2 { display: flex; }
-#d3:checked ~ .carrousel_sectiond .nav_arrows #arrows4_3 { display: flex; }
-
-/* Dots Interiores */
-#d1:checked ~ .carrousel_sectiond .dots label:nth-child(1),
-#d2:checked ~ .carrousel_sectiond .dots label:nth-child(2),
-#d3:checked ~ .carrousel_sectiond .dots label:nth-child(3) {
-    background: #fff;
-    width: 22px;
-    border-radius: 4px;
-}
-
-.image-link {
-    display: inline-block;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.image-link:active {
-    transform: scale(0.97);
-    box-shadow: 0 0 0 3px rgba(255, 100, 0, 0.6);
-    opacity: 0.8;
-}
-
-.image-link:hover {
-    transform: scale(1.02);
-    filter: brightness(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.image-link img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-
-#residencial:target,
-#comercial:target,
-#publicas:target,
-#interiores:target {
-    animation: resaltarSeccion 1s ease-in-out;
-    scroll-margin-top: 20px; 
-}
-@keyframes resaltarSeccion {
-    0% {
-        background-color: transparent;
-        border-left-color: transparent;
-    }
-    30% {
-        background-color: rgba(122, 212, 255, 0.2);
-        border-left: 4px solid #6888c0;
-        padding-left: 10px;
-    }
-    100% {
-        background-color: transparent;
-        border-left-color: transparent;
-        padding-left: 0;
-    }
-}
-
-/* --- 9. RESPONSIVE --- */
-@media (max-width: 1100px) {
-    .card_3d {
-        width: 320px;
-        height: 220px;
-    }
-
-    .arrow_group {
-        top: -185px;
-    }
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 60px;
-    }
-
-    .sidebar_hide,
-    .sidebar_footer {
-        display: none;
-    }
-
-    .card_3d {
-        width: 240px;
-        height: 170px;
-    }
-
-    .arrow_group {
-        top: -145px;
-    }
-}
-/* --- FILTRO DE CATEGORÍAS (botón con dropdown al hover) --- */
 .filter_dropdown {
     position: relative;
     display: inline-block;
@@ -557,19 +322,47 @@ input[type="radio"] {
     border-color: #7AD4FF;
 }
 
-/* Secciones ocultas por el filtro: pequeño fade gestionado por JS antes de display:none */
-.carrousel_section,
-.carrousel_sectionb,
-.carrousel_sectionc,
-.carrousel_sectiond {
-    transition: opacity 0.2s ease;
+/* --- ESTILOS DE COMPATIBILIDAD CON MODO ADMIN --- */
+.admin-editable.card_label-title:hover,
+.admin-editable(data-admin-id):hover {
+    outline: 2px dashed #22c55e;
+    background: rgba(34, 197, 94, 0.05);
+    cursor: pointer;
 }
 
-.carrousel_section.filter_hidden,
-.carrousel_sectionb.filter_hidden,
-.carrousel_sectionc.filter_hidden,
-.carrousel_sectiond.filter_hidden {
-    display: none;
+/* --- RESPONSIVE DESIGN (ADAPTABILIDAD) --- */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    .card_3d {
+        /* En pantallas medianas calculamos espacio para albergar 2 tarjetas visibles */
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+
+/* Dispositivos móviles */
+@media (max-width: 768px) {
+    document.body {
+        padding-top: 0px;
+        /* Ajustes por si la barra admin requiere espacio */
+    }
+
+    .content {
+        padding: 1rem;
+    }
+
+    .projects_header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* En pantallas móviles se muestra 1 sola tarjeta abarcando el ancho */
+    .card_3d {
+        flex: 0 0 100%;
+    }
+
+    .scene {
+        gap: 0;
+    }
 }
 
 @media (max-width: 480px) {
