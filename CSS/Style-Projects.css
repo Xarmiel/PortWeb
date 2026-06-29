@@ -324,9 +324,11 @@ html {
 
 /* --- ESTILOS DE COMPATIBILIDAD CON MODO ADMIN --- */
 .admin-editable.card_label-title:hover,
-.admin-editable(data-admin-id):hover {
+.admin-editable[data-admin-id]:hover,
+.admin-editable[data-admin-img-id]:hover {
     outline: 2px dashed #22c55e;
-    background: rgba(34, 197, 94, 0.05);
+    /* Usamos un outline-offset para que el recuadro verde no se pegue al texto */
+    outline-offset: 3px; 
     cursor: pointer;
 }
 
