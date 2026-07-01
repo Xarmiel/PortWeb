@@ -2,16 +2,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropdown = document.getElementById("filter-dropdown");
     const trigger = document.getElementById("filter-trigger");
     const triggerText = trigger ? trigger.querySelector(".filter_trigger-text") : null;
-    const chips = document.querySelectorAll(".filter_chip");
-    const sections = document.querySelectorAll("[data-category]");
+    const chipsContainer = document.querySelector(".filter_options");
 
-    if (!dropdown || !trigger || !chips.length || !sections.length) return;
+    if (!dropdown || !trigger || !chipsContainer) return;
 
     const FADE_MS = 180;
-    let activeFilter = "todos";
+
+    const categoriasPersonalizadas = JSON.parse(localStorage.getItem('adminCategoriasPersonalizadas')) || [];
+    
+    categoriasPersonalizadas.forEach(cat => {
+        if (!chipsContainer.querySelector(`[data-filter="${cat.slug}"]`)) {
+            const nuevoChip = document.createElement('button');
+            nuevoChip.type = 'button';
+            nuevoChip.classList.add('filter_chip');
+            nuevoChip.setAttribute('data-filter', cat.slug);
+            nuevoChip.textContent = cat.titulo;
+            chipsContainer.appendChild(nuevoChip);
+        }
+    });
+
+    const chips = document.querySelectorAll(".filter_chip");
 
     function applyFilter(category) {
-        // Obtenemos el contenedor padre común de todas las secciones
+        const sections = document.querySelectorAll("[data-category]");
         const contenedorPadre = document.getElementById("mis-proyectos");
 
         sections.forEach((section) => {
@@ -25,10 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         section.style.opacity = "1";
                     });
                 }
-                
-                // --- NUEVA LÓGICA DE REORDENAMIENTO ---
-                // Si seleccionamos una categoría específica (que no sea "todos"), 
-                // movemos de inmediato esa sección al principio del contenedor.
+
                 if (category !== "todos" && contenedorPadre) {
                     contenedorPadre.prepend(section);
                 }
@@ -40,11 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // --- OPCIONAL: Restaurar orden original al seleccionar "Todos" ---
-        // Si el usuario vuelve a presionar "Todos", es ideal restablecer el orden 
-        // natural de la maquetación basándonos en un array fijo de categorías.
         if (category === "todos" && contenedorPadre) {
             const ordenOriginal = ["residencial", "comercial", "publicas", "interiores"];
+            categoriasPersonalizadas.forEach(c => ordenOriginal.push(c.slug));
+
             ordenOriginal.forEach(cat => {
                 const seccionCorrespondiente = contenedorPadre.querySelector(`[data-category="${cat}"]`);
                 if (seccionCorrespondiente) {
@@ -57,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function closeDropdown() {
         dropdown.classList.remove("is-open");
     }
+
     trigger.addEventListener("click", (event) => {
         event.stopPropagation();
         dropdown.classList.toggle("is-open");
@@ -73,10 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
             chips.forEach((c) => c.classList.remove("is-active"));
             chip.classList.add("is-active");
 
-            activeFilter = chip.dataset.filter;
+            const activeFilter = chip.dataset.filter;
             if (triggerText) triggerText.textContent = chip.textContent;
+            
             applyFilter(activeFilter);
-
             closeDropdown();
         });
     });
