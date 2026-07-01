@@ -1,0 +1,84 @@
+/* --- 1. BASE --- */
+html {
+    scroll-behavior: smooth; /* Hace que el desplazamiento sea fluido */
+}
+
+/* --- 4. CONTENIDO --- */
+.content {
+    flex: 1; /* Permite que el elemento crezca para ocupar todo el espacio restante */
+    display: flex;
+    flex-direction: column;
+    color: #E8E8E8;
+    transition: all 0.4s ease;
+    min-width: 0; /* Asegura que el contenedor pueda encogerse correctamente en contextos flex */
+}
+
+.intro_text {
+    width: 100%;
+    max-width: 900px; /* Define un límite máximo de ancho */
+    text-align: justify; /* Alinea el texto de forma que los bordes izquierdo y derecho sean rectos */
+    margin-bottom: 2rem;
+}
+
+/* --- 5. CARDS DE PROYECTOS --- */
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos hijos pasen a la siguiente línea si no caben */
+    gap: 20px;
+    width: 100%;
+}
+
+.card {
+    flex: 1 1 calc(35%); /* Atajo para flex-grow, flex-shrink y flex-basis */
+    min-width: 280px; /* Define el ancho mínimo que debe tener el elemento */
+    max-width: 100%;
+    background-color: #1A2747;
+    border: 2px solid #000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    transition: all 0.4s ease-in-out;
+}
+
+.card_image {
+    width: 100%;
+    height: 14rem;
+}
+
+.card_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Elimina el espacio extra debajo de las imágenes (comportamiento de bloque) */
+}
+
+.card_content {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Alinea las líneas de texto al centro */
+}
+
+.card_title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.card_location {
+    margin: 5px 0 0 0;
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+/* --- 6. RESPONSIVE --- */
+@media (max-width: 768px) { /* Aplica las reglas solo si la pantalla mide 1100px o menos */
+    .card {
+        flex-basis:100%;
+    }
+}

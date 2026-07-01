@@ -1,0 +1,161 @@
+.sidebar {
+    margin-top: 65px; /* Crea un margen superior externo */
+    height: 16cm; /* Define una altura fija en centímetros */
+    background-color: #1E293B; /* Define el color de fondo */
+    border-radius: 10px; /* Redondea las esquinas del contenedor */
+    width: 80px; /* Estado cerrado */
+    padding: 1.5rem 0;
+    flex-shrink: 0; /* Evita que el elemento se encoja si falta espacio en el contenedor flex */
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Suaviza el cambio de ancho con una curva de velocidad */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga de los límites del contenedor */
+    position: sticky;
+    top: 16.7%;
+}
+
+.sidebar:hover {
+    width: 260px; /* Estado abierto */
+}
+
+.sidebar_list {
+    list-style: none; /* Elimina los puntos o viñetas de la lista */
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.sidebar_element {
+    width: 100%;
+    padding: .5rem .8rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    fill: #fff; /* Define el color de relleno para elementos SVG (iconos) */
+    transition: background 0.3s ease;
+}
+
+.sidebar_element:not(:has(.sidebar_icon-logo, .sidebar_avatar-title)):hover {
+   color: #B8B8B8;
+   fill: #B8B8B8;
+   background-color: #667EB0;
+   cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+}   
+
+.sidebar_link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar_icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.sidebar_hide {
+    width: fit-content; /* Ajusta el ancho automáticamente al tamaño del contenido interno */
+    opacity: 0; /* Hace que el elemento sea totalmente transparente */
+    white-space: nowrap; /* Evita que el texto salte a una nueva línea */
+    transition: opacity 0.3s ease;
+    margin-left: 2rem;
+    pointer-events: none; /* Evita que el elemento reciba eventos del mouse mientras es invisible */
+}
+
+.sidebar:hover .sidebar_hide {
+    opacity: 1; /* Hace que el elemento sea totalmente visible */
+    pointer-events: auto; /* Permite que el elemento reciba eventos del mouse cuando es visible */
+}
+
+.sidebar_element-avatar {
+    margin-top: auto; /* Empuja el elemento hacia el final del contenedor flex vertical */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+}
+
+.sidebar_avatar-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: cover; /* Ajusta la imagen para cubrir el área sin deformarse */
+    border-radius: 50%; /* Convierte el contenedor en un círculo perfecto */
+    flex-shrink: 0;
+}
+
+.sidebar_avatar-title {
+    margin: 0;
+    font-size: 1.4rem; /* Define el tamaño de la fuente */
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.sidebar_avatar-text {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+    white-space: nowrap;
+}
+
+/* --- 6. RESPONSIVE --- */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100% !important;
+        height: 60px; /* Altura de la barra móvil */
+        margin: 0 !important;
+        border-radius: 0 !important;
+        position: fixed !important; /* La clava en la parte inferior */
+        bottom: 0 !important;
+        left: 0 !important;
+        z-index: 1000;
+        padding: 0 !important;
+        top: 0;
+    }
+
+    .sidebar_list {
+        display: flex !important;
+        flex-direction: row ; /* FUERZA a que sea horizontal */
+        width: 100%;
+        height: 100%;
+        justify-content: space-evenly !important; /* Separa los íconos equitativamente */
+        align-items: center !important;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar_element {
+        width: auto !important; /* QUITA el 100% de ancho de escritorio que los apilaba */
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 !important;
+    }
+
+    .sidebar_link {
+        width: 100%;
+        justify-content: center !important;
+    }
+
+    .sidebar_icon {
+        margin: 0 !important; /* Quita el margen izquierdo de escritorio */
+        width: 28px; /* Un poco más grandes para que se vean bien en el celular */
+        height: 28px;
+    }
+
+    /* Ocultamos los textos, el logo de "Menú" y la foto de perfil */
+    .sidebar_hide, 
+    .sidebar_element-avatar, 
+    .sidebar_list li:first-child { 
+        display: none !important; 
+    }
+}

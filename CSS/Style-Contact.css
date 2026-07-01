@@ -1,0 +1,240 @@
+/* --- 4. CONTENIDO --- */
+.content {
+  flex: 1;
+  /* Permite que el elemento crezca para ocupar todo el espacio restante */
+  display: flex;
+  flex-direction: column;
+  color: #E8E8E8;
+  transition: all 0.4s ease;
+  min-width: 0;
+  /* Asegura que el contenedor pueda encogerse correctamente en contextos flex */
+}
+
+.contacto_info {
+  padding-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.contacto_card {
+  background-color: #111E38;
+  padding: 20px;
+  border: 2px solid #192645;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.contacto_card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 2px 6px #7AD4FF;
+}
+
+.contacto_form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 40rem;
+}
+
+.contacto_form h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
+}
+
+.contacto_form p {
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+  color: #c5c9e8;
+}
+
+
+
+.form_grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form_grupo label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #c5c9e8;
+}
+
+.form_grupo input,
+.form_grupo textarea {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: system-ui, Arial, sans-serif;
+  color: #1e293b;
+  background-color: #D9E6FF;
+  outline: none;
+}
+
+.form_grupo input:focus,
+.form_grupo textarea:focus {
+  border-color: #3b82f6;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.btn {
+  border: none;
+  align-self: center;
+  background-color: #D9E6FF;
+}
+
+.btn.btn-primario {
+  border-radius: 8px;
+  width: 15em;
+}
+
+.form_grupo textarea {
+  resize: vertical;
+}
+
+.contacto_card.contacto_redes {
+  border: 3px solid #3C5BA3;
+  color: #111E38;
+  background-color: #D9E6FF;
+  padding: .4rem;
+  flex-direction: column;
+}
+
+.redes_sociales {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: .1rem;
+}
+
+.redes_sociales h3 {
+  margin: 0;
+  align-self: center;
+}
+
+.redes_list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.redes_list a, li {
+  display: flex;
+  text-decoration: none;
+}
+
+.btn.btn-secundario {
+  margin: 0 .2rem 0 .8rem;
+}
+
+.redes_list img {
+  width: 2rem;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .contacto_info {
+        gap: 2rem;
+    }
+
+    .contacto_card {
+        width: 100%; 
+        box-sizing: border-box; 
+    }
+
+    .contacto_form {
+        width: 100%; 
+        box-sizing: border-box;
+    }
+
+    /* --- CAMBIOS PARA REDES SOCIALES --- */
+    
+    /* 1. Quitar el aspecto de "formulario/tarjeta" */
+    .contacto_card.contacto_redes {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+    }
+
+    /* 2.Asegura que el contenedor apile el título y los íconos, y los centre */
+    .redes_sociales {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100%;
+        color: #d9e6ff;
+    }
+
+      /* Centra el texto del título */
+    .redes_sociales h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        text-align: center !important;
+        width: 100%;
+    }
+
+    /* 3. Colocar en fila y centrados */
+    .redes_list {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center;
+        gap: 2rem; /* Separación entre iconos */
+        width: 100%;
+        padding: 0;
+    }
+
+    /* 4. Ocultar los textos (@juve3dstudio, etc.) */
+    .redes_list li p {
+        display: none !important;
+    }
+
+    /* 5. Iconos más pequeños */
+    .redes_list img {
+        width: 35px; 
+        height: auto;
+    }
+    /* 6. Quitar el margen de los botones para que no se vean tan separados en móvil */
+    .btn.btn-secundario {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    /* 6. Quitar el fondo de los botones para que solo se vean los iconos */
+    .redes_list .btn {
+        background-color: transparent !important;
+    }
+
+      /* Reemplaza la imagen de Facebook */
+    .redes_list img[alt="Facebook"] {
+        content: url("../Recursos/FacebookMovile.png");
+    }
+
+      /* Reemplaza la imagen de Instagram */
+    .redes_list img[alt="Instagram"] {
+        content: url("../Recursos/InstagramMovile.png"); 
+    }
+
+      /* Reemplaza la imagen de YouTube */
+    .redes_list img[alt="Youtube"] {
+        content: url("../Recursos/YouTubeMovile.png"); 
+    }
+
+      /* Reemplaza la imagen de TikTok */
+    .redes_list img[alt="Tiktok"] {
+        content: url("../Recursos/TiktokMovile.png");
+    }
+}

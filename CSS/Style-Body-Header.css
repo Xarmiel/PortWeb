@@ -1,0 +1,66 @@
+body {
+    font-family: "Ubuntu", sans-serif; /* Define la tipografía del documento */
+    font-weight: 500; /* Define el grosor de la fuente */
+    margin: 0; /* Elimina el espacio externo predeterminado del navegador */
+    min-height: 100vh; /* Asegura que el cuerpo mida al menos el alto total de la pantalla */
+    background: #0F172A; /* Crea un fondo con degradado de colores */
+    background-size: cover; /* Ajusta el fondo para que cubra todo el contenedor */
+    background-attachment: fixed; /* Mantiene el fondo estático al hacer scroll */
+}
+
+header {
+    background-color: #0F1A38; /* Define el color de fondo del encabezado */
+    width: 100%; /* Define el ancho al total disponible */
+    box-sizing: border-box; /* Incluye el marign y bordes dentro del ancho total del elemento */
+    padding-top: 1rem; /* Espacio entre la parte superior y el contenido */
+    padding-bottom: 1rem; /* Espacio entre la parte inferior y el contenido */
+    display: flex;
+    justify-content: center; /* Alinea el contenido horizontalmente al centro en flex */
+    align-items: center; /* Alinea el contenido verticalmente al centro en flex */
+}
+
+header p {
+    font-size: 1.3rem; /* Define el tamaño de la fuente del encabezado */
+    margin: 0; /* Reinicia los márgenes por defecto del título */
+    color: #F8FAFC; /* Define el color del texto */
+}
+
+.app_container {
+    display: flex;
+    flex-direction: row; /* Alinea los elementos hijos de forma horizontal */
+    width: 100%;
+    padding: 1.5rem;
+    gap: 2rem; /* Define el espacio de separación entre elementos hijos */
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #030F29; /* Define el color de fondo del pie de página */
+    width: 100%;
+    text-align: center; /* Alinea el texto al centro */
+}
+
+footer p {
+    font-size: 0.9rem; /* Define el tamaño de la fuente del pie de página */
+    margin: 0; /* Reinicia los márgenes por defecto del título */
+    padding: 1rem; /* Agrega espacio interno alrededor del texto */
+    color: #7F8799; /* Define el color del texto */
+}
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .app_container {
+        flex-direction: column; /* Apila el contenido verticalmente */
+        padding: 1rem;
+        padding-bottom: 85px; /* IMPORTANTE: Da espacio extra abajo para que la barra no tape las tarjetas */
+        gap: 1rem;
+    }
+}
+.scroll_fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.scroll_fade.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
