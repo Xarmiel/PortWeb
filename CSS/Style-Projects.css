@@ -49,11 +49,14 @@ html {
     flex-direction: column;
 }
 
+<<<<<<< HEAD
 /* Oculta por completo (sin espacio) las secciones descartadas por el filtro */
 .filter_hidden {
     display: none;
 }
 
+=======
+>>>>>>> 99de1acae9536b3ccc8a0241bf414d068982732b
 .carrousel_title {
     font-size: 1.8rem;
     color: #fff;
@@ -349,29 +352,43 @@ html {
 
 /* Dispositivos móviles */
 @media (max-width: 768px) {
+<<<<<<< HEAD
     body {
+=======
+    document.body {
+>>>>>>> 99de1acae9536b3ccc8a0241bf414d068982732b
         padding-top: 0px;
         /* Ajustes por si la barra admin requiere espacio */
     }
 
     .content {
         padding: 1rem;
+<<<<<<< HEAD
         box-sizing: border-box;
+=======
+>>>>>>> 99de1acae9536b3ccc8a0241bf414d068982732b
     }
 
     .projects_header h1 {
         font-size: 1.8rem;
     }
 
+<<<<<<< HEAD
     /* En pantallas móviles se muestra 1 sola tarjeta abarcando el ancho, sin mínimo fijo */
     .card_3d {
         flex: 0 0 100%;
         min-width: 0;
         box-sizing: border-box;
+=======
+    /* En pantallas móviles se muestra 1 sola tarjeta abarcando el ancho */
+    .card_3d {
+        flex: 0 0 100%;
+>>>>>>> 99de1acae9536b3ccc8a0241bf414d068982732b
     }
 
     .scene {
         gap: 0;
+<<<<<<< HEAD
         padding: 20px 10px 10px 10px; /* mismo padding a ambos lados, ya no solo a la izquierda */
         box-sizing: border-box;
     }
@@ -420,6 +437,8 @@ html {
     .filter_chip {
         text-align: center;
         width: 100%;
+=======
+>>>>>>> 99de1acae9536b3ccc8a0241bf414d068982732b
     }
 }
 
