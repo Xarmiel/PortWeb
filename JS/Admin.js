@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const opcion = prompt(
                     "Selecciona una opción para modificar la imagen:\n" +
                     "1. Ingresar una ruta de texto (URL o ruta local)\n" +
-                    "2. Subir un archivo desde la PC (Base64)\n" +
+                    "2. Subir un archivo desde la PC\n" +
                     "3. Restaurar imagen original"
                 );
 
