@@ -19,14 +19,14 @@ html {
 
 .projects_header h1 {
     font-size: 2.5rem;
-    color: #fff;
+    color: var(--text-white);
     font-family: 'Ubuntu', sans-serif;
     margin-bottom: 0.5rem;
 }
 
 .projects_subtitle {
     font-size: 1.1rem;
-    color: #c5c9e8;
+    color: var(--text-secondary);
 }
 
 #mis-proyectos {
@@ -51,18 +51,18 @@ html {
 
 .carrousel_title {
     font-size: 1.8rem;
-    color: #fff;
+    color: var(--text-white);
     padding-left: 0.75rem;
     margin-bottom: 1.5rem;
     font-family: 'Ubuntu', sans-serif;
-    border-left: 5px solid #7AD4FF;
+    border-left: 5px solid var(--color-accent);
     padding-left: 10px;
     transition: all 0.3s ease;
     width: fit-content;
 }
 
 .carrousel_title:hover {
-    color: #7AD4FF;
+    color: var(--color-accent);
     transform: translateX(5px);
     text-shadow: 0 0 8px rgba(122, 212, 255, 0.6);
 }
@@ -74,7 +74,7 @@ html {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #7AD4FF, transparent);
+    background: linear-gradient(90deg, var(--color-accent), transparent);
     transition: width 0.4s ease;
 }
 
@@ -101,7 +101,7 @@ html {
 .card_3d {
     flex: 0 0 calc(33.333% - 1.34rem);
     min-width: 280px;
-    background: #fff;
+    background: var(--text-white);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -137,7 +137,7 @@ html {
     font-size: 1.2rem;
     font-weight: 500;
     margin: 0 0 0.4rem 0;
-    color: #fff;
+    color: var(--text-white);
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -190,7 +190,7 @@ html {
 .arrow_element {
     background: transparent;
     border: none;
-    color: #fff; /* Color blanco adaptado al fondo oscuro de tu portafolio */
+    color: var(--text-white); /* Color blanco adaptado al fondo oscuro de tu portafolio */
     font-size: 1rem;
     cursor: pointer;
     padding: 0 10px;
@@ -202,7 +202,7 @@ html {
 }
 
 .arrow_element:hover:not(:disabled) {
-    color: #7AD4FF; /* Color celeste a juego con tus líneas de título */
+    color: var(--color-accent); /* Color celeste a juego con tus líneas de título */
     transform: scale(1.15);
 }
 
@@ -237,8 +237,8 @@ html {
     font-family: inherit;
     font-size: 0.85rem;
     font-weight: 500;
-    color: #c5c9e8;
-    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-secondary);
+    background: var(--bg-card-glass);
     border: 1px solid rgba(122, 212, 255, 0.25);
     border-radius: 999px;
     padding: 0.45rem 1.1rem;
@@ -254,7 +254,7 @@ html {
 .filter_dropdown:hover .filter_trigger,
 .filter_dropdown:focus-within .filter_trigger,
 .filter_dropdown.is-open .filter_trigger {
-    color: #fff;
+    color: var(--text-white);
     border-color: rgba(122, 212, 255, 0.6);
     background: rgba(122, 212, 255, 0.08);
 }
@@ -300,7 +300,7 @@ html {
     font-family: inherit;
     font-size: 0.82rem;
     font-weight: 500;
-    color: #c5c9e8;
+    color: var(--text-secondary);
     background: transparent;
     border: 1px solid transparent;
     border-radius: 999px;
@@ -311,15 +311,15 @@ html {
 }
 
 .filter_chip:hover {
-    color: #fff;
+    color: var(--text-white);
     background: rgba(122, 212, 255, 0.1);
     border-color: rgba(122, 212, 255, 0.3);
 }
 
 .filter_chip.is-active {
-    color: #0F172A;
-    background: #7AD4FF;
-    border-color: #7AD4FF;
+    color: var(--bg-body);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
 }
 
 /* --- ESTILOS DE COMPATIBILIDAD CON MODO ADMIN --- */

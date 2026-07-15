@@ -4,7 +4,7 @@
   /* Permite que el elemento crezca para ocupar todo el espacio restante */
   display: flex;
   flex-direction: column;
-  color: #E8E8E8;
+  color: var(--text-primary);
   transition: all 0.4s ease;
   min-width: 0;
   /* Asegura que el contenedor pueda encogerse correctamente en contextos flex */
@@ -20,16 +20,16 @@
 }
 
 .contacto_card {
-  background-color: #111E38;
+  background-color: var(--bg-card);
   padding: 20px;
-  border: 2px solid #192645;
+  border: 2px solid var(--border-primary);
   border-radius: 20px;
   transition: all 0.4s ease;
 }
 
 .contacto_card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 2px 6px #7AD4FF;
+  box-shadow: 0 2px 6px var(--color-accent);
 }
 
 .contacto_form {
@@ -44,14 +44,14 @@
   font-size: 1.5rem;
   text-align: center;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-white);
 }
 
 .contacto_form p {
   margin: 0;
   font-size: 1rem;
   text-align: center;
-  color: #c5c9e8;
+  color: var(--text-secondary);
 }
 
 
@@ -65,32 +65,32 @@
 .form_grupo label {
   font-size: 14px;
   font-weight: 500;
-  color: #c5c9e8;
+  color: var(--text-secondary);
 }
 
 .form_grupo input,
 .form_grupo textarea {
   padding: 10px 14px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--border-input);
   border-radius: 8px;
   font-size: 14px;
   font-family: system-ui, Arial, sans-serif;
-  color: #1e293b;
-  background-color: #D9E6FF;
+  color: var(--bg-sidebar);
+  background-color: var(--bg-input);
   outline: none;
 }
 
 .form_grupo input:focus,
 .form_grupo textarea:focus {
-  border-color: #3b82f6;
-  background-color: #fff;
+  border-color: var(--color-focus);
+  background-color: var(--text-white);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
 
 .btn {
   border: none;
   align-self: center;
-  background-color: #D9E6FF;
+  background-color: var(--bg-input);
 }
 
 .btn.btn-primario {
@@ -103,9 +103,9 @@
 }
 
 .contacto_card.contacto_redes {
-  border: 3px solid #3C5BA3;
-  color: #111E38;
-  background-color: #D9E6FF;
+  border: 3px solid var(--border-redes);
+  color: var(--bg-card);
+  background-color: var(--bg-input);
   padding: .4rem;
   flex-direction: column;
 }
@@ -177,7 +177,7 @@
         flex-direction: column !important;
         align-items: center !important;
         width: 100%;
-        color: #d9e6ff;
+        color: var(--bg-input);
     }
 
       /* Centra el texto del título */

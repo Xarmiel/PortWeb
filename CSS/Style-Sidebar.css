@@ -1,7 +1,7 @@
 .sidebar {
     margin-top: 65px; /* Crea un margen superior externo */
     height: 16cm; /* Define una altura fija en centímetros */
-    background-color: #1E293B; /* Define el color de fondo */
+    background-color: var(--bg-sidebar); /* Define el color de fondo */
     border-radius: 10px; /* Redondea las esquinas del contenedor */
     width: 80px; /* Estado cerrado */
     padding: 1.5rem 0;
@@ -34,15 +34,15 @@
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    color: #fff;
-    fill: #fff; /* Define el color de relleno para elementos SVG (iconos) */
+    color: var(--text-white);
+    fill: var(--text-white); /* Define el color de relleno para elementos SVG (iconos) */
     transition: background 0.3s ease;
 }
 
 .sidebar_element:not(:has(.sidebar_icon-logo, .sidebar_avatar-title)):hover {
-   color: #B8B8B8;
-   fill: #B8B8B8;
-   background-color: #667EB0;
+   color: var(--color-sidebar-icon-hover);
+   fill: var(--color-sidebar-icon-hover);
+   background-color: var(--bg-sidebar-hover);
    cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
 }   
 
@@ -102,7 +102,7 @@
 .sidebar_avatar-text {
     margin: 0;
     font-size: 0.85rem;
-    color: #666;
+    color: var(--text-avatar-sub);
     white-space: nowrap;
 }
 

@@ -11,7 +11,7 @@ html {
     /* Permite que el elemento crezca para ocupar todo el espacio restante */
     display: flex;
     flex-direction: column;
-    color: #E8E8E8;
+    color: var(--text-primary);
     transition: all 0.4s ease;
     min-width: 0;
     /* Asegura que el contenedor pueda encogerse correctamente en contextos flex */
@@ -78,13 +78,13 @@ html {
 
 .intro_image img:hover {
     transform: translateY(-10px); /* Eleva la imagen ligeramente al pasar el cursor por encima */
-    box-shadow: 0 10px 20px #7AD4FF; /* Agrega una sombra azul brillante para resaltar la imagen */
+    box-shadow: 0 10px 20px var(--color-accent); /* Agrega una sombra azul brillante para resaltar la imagen */
 }
 
 table {
     border-collapse: separate;
     /* Elimina el espacio entre bordes de celdas */
-    border: 2px solid #334155;
+    border: 2px solid var(--border-secondary);
     border-radius: 10px;
     /* Redondea las esquinas de la tabla */
     border-spacing: 0;
@@ -92,19 +92,19 @@ table {
     overflow: hidden;
     /* Oculta cualquier contenido que sobresalga de los límites de la tabla */
     text-align: center;
-    color: #B5D0FF;
+    color: var(--text-table);
 }
 
 table th {
-    background-color: #1E293B;
-    color: #C7CEFF;
+    background-color: var(--bg-sidebar);
+    color: var(--text-table-header);
     padding: 0.5rem;
     font-size: 1.2rem;
 }
 
 table tr:hover {
-    background-color: #111E38;
-    color: #E8E8E8;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
 }
 
 .table_study {
@@ -141,7 +141,7 @@ table tr:hover {
 .table_study table:hover,
 .table_skills table:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 10px #7AD4FF;
+    box-shadow: 0 5px 10px var(--color-accent);
 }
 
 /* --- 4. RESPONSIVE --- */

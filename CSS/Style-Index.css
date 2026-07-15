@@ -8,7 +8,7 @@ html {
     flex: 1; /* Permite que el elemento crezca para ocupar todo el espacio restante */
     display: flex;
     flex-direction: column;
-    color: #E8E8E8;
+    color: var(--text-primary);
     transition: all 0.4s ease;
     min-width: 0; /* Asegura que el contenedor pueda encogerse correctamente en contextos flex */
 }
@@ -32,8 +32,8 @@ html {
     flex: 1 1 calc(35%); /* Atajo para flex-grow, flex-shrink y flex-basis */
     min-width: 280px; /* Define el ancho mínimo que debe tener el elemento */
     max-width: 100%;
-    background-color: #1A2747;
-    border: 2px solid #000;
+    background-color: var(--bg-card-alt);
+    border: 2px solid var(--border-card-dark);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -72,7 +72,7 @@ html {
 
 .card_location {
     margin: 5px 0 0 0;
-    color: #bbb;
+    color: var(--text-location);
     font-size: 0.9rem;
 }
 

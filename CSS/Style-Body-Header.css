@@ -3,26 +3,35 @@ body {
     font-weight: 500; /* Define el grosor de la fuente */
     margin: 0; /* Elimina el espacio externo predeterminado del navegador */
     min-height: 100vh; /* Asegura que el cuerpo mida al menos el alto total de la pantalla */
-    background: #0F172A; /* Crea un fondo con degradado de colores */
+    background: var(--bg-body); /* Crea un fondo con degradado de colores */
     background-size: cover; /* Ajusta el fondo para que cubra todo el contenedor */
     background-attachment: fixed; /* Mantiene el fondo estático al hacer scroll */
 }
 
 header {
-    background-color: #0F1A38; /* Define el color de fondo del encabezado */
+    background-color: var(--bg-header); /* Define el color de fondo del encabezado */
     width: 100%; /* Define el ancho al total disponible */
     box-sizing: border-box; /* Incluye el marign y bordes dentro del ancho total del elemento */
     padding-top: 1rem; /* Espacio entre la parte superior y el contenido */
     padding-bottom: 1rem; /* Espacio entre la parte inferior y el contenido */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     display: flex;
     justify-content: center; /* Alinea el contenido horizontalmente al centro en flex */
     align-items: center; /* Alinea el contenido verticalmente al centro en flex */
+    position: relative;
+}
+
+/* Botón de tema — anclado a la derecha del header */
+header #theme-toggle-btn {
+    position: absolute;
+    right: 1.5rem;
 }
 
 header p {
     font-size: 1.3rem; /* Define el tamaño de la fuente del encabezado */
     margin: 0; /* Reinicia los márgenes por defecto del título */
-    color: #F8FAFC; /* Define el color del texto */
+    color: var(--text-primary); /* Define el color del texto */
 }
 
 .app_container {
@@ -35,7 +44,7 @@ header p {
 }
 
 footer {
-    background-color: #030F29; /* Define el color de fondo del pie de página */
+    background-color: var(--bg-footer); /* Define el color de fondo del pie de página */
     width: 100%;
     text-align: center; /* Alinea el texto al centro */
 }
@@ -44,7 +53,7 @@ footer p {
     font-size: 0.9rem; /* Define el tamaño de la fuente del pie de página */
     margin: 0; /* Reinicia los márgenes por defecto del título */
     padding: 1rem; /* Agrega espacio interno alrededor del texto */
-    color: #7F8799; /* Define el color del texto */
+    color: var(--text-muted); /* Define el color del texto */
 }
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
