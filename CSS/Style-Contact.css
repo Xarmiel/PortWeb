@@ -75,7 +75,7 @@
   border-radius: 8px;
   font-size: 14px;
   font-family: system-ui, Arial, sans-serif;
-  color: var(--bg-sidebar);
+  color: var(--text-input);
   background-color: var(--bg-input);
   outline: none;
 }
@@ -83,8 +83,8 @@
 .form_grupo input:focus,
 .form_grupo textarea:focus {
   border-color: var(--color-focus);
-  background-color: var(--text-white);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
 }
 
 .btn {
@@ -96,6 +96,11 @@
 .btn.btn-primario {
   border-radius: 8px;
   width: 15em;
+  padding: 0.75rem 0;
+  background-color: var(--color-accent-2);
+  color: var(--color-accent-text);
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .form_grupo textarea {
@@ -104,8 +109,8 @@
 
 .contacto_card.contacto_redes {
   border: 3px solid var(--border-redes);
-  color: var(--bg-card);
-  background-color: var(--bg-input);
+  color: var(--text-redes);
+  background-color: var(--bg-redes);
   padding: .4rem;
   flex-direction: column;
 }
