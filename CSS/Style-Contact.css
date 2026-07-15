@@ -97,8 +97,8 @@
   border-radius: 8px;
   width: 15em;
   padding: 0.75rem 0;
-  background-color: var(--color-accent-2);
-  color: var(--color-accent-text);
+  background-color: var(--btn-primario-bg);
+  color: var(--btn-primario-text);
   cursor: pointer;
   font-weight: 600;
 }

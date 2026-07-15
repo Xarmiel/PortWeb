@@ -32,6 +32,8 @@
     --color-accent-2:     #38bdf8;
     --color-accent-text:  #0f172a;
     --color-focus:        #3b82f6;
+    --btn-primario-bg:    #38BDF8;
+    --btn-primario-text:  #0F172A;
 
     /* Bordes */
     --border-card:        #000;
@@ -76,7 +78,8 @@ html.light-mode {
     --color-accent-2:     #2563EB;
     --color-accent-text:  #FFFFFF;
     --color-focus:        #3b82f6;
-
+    --btn-primario-bg:    #a4cdff;
+    --btn-primario-text:  #0F172A;
     --border-card:        #CBD5E1;
     --border-primary:     #CBD5E1;
     --border-secondary:   #94A3B8;
