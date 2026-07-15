@@ -58,7 +58,7 @@ html.light-mode {
     --bg-card-alt:        #EFF6FF;
     --bg-table-header:    #DBEAFE;
     --bg-input:           #FFFFFF;
-    --bg-redes:           #DBEAFE;
+    --bg-redes:           #ffffff;
     --bg-sidebar-hover:   #BFDBFE;
     --bg-card-glass:      rgba(0, 0, 0, 0.03);
 
@@ -81,7 +81,7 @@ html.light-mode {
     --border-primary:     #CBD5E1;
     --border-secondary:   #94A3B8;
     --border-input:       #94A3B8;
-    --border-redes:       #3B82F6;
+    --border-redes:       #CBD5E1;
 
     --toggle-bg:          #e0e7ef;
 }
