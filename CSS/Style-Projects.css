@@ -130,20 +130,21 @@ html {
     left: 0;
     width: 100%;
     padding: 1.2rem;
-    background: rgba(19, 39, 172, 0.75);
+    background: linear-gradient(to top, var(--bg-card-alt) 55%, transparent 100%);
 }
 
 .card_label-title {
     font-size: 1.2rem;
     font-weight: 500;
     margin: 0 0 0.4rem 0;
-    color: var(--text-white);
+    color: var(--text-primary);
+    text-shadow: none;
     font-family: 'Ubuntu', sans-serif;
 }
 
 .card_label-location {
     font-size: 0.9rem;
-    color: #ccc;
+    color: var(--text-secondary);
     margin: 0;
 }
 
