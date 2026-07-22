@@ -1,20 +1,22 @@
 /* ==========================================================================
-   ESTILOS GENERALES Y ESTRUCTURA DE PROYECTOS
-   ========================================================================== */
+ESTILOS GENERALES Y ESTRUCTURA DE PROYECTOS
+========================================================================== */
 
 html {
-    scroll-behavior: smooth; /* Hace que el desplazamiento sea fluido */
+    scroll-behavior: smooth;
 }
 
 .content {
     flex-grow: 1;
-    min-width: 0; 
-    overflow-x: hidden;
+    min-width: 0;
+    overflow-x: visible;
 }
 
 .projects_header {
     text-align: left;
     margin-bottom: 3rem;
+    position: relative;
+    overflow: visible;
 }
 
 .projects_header h1 {
@@ -35,12 +37,12 @@ html {
     gap: 4rem;
     padding: 2rem 0;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* ==========================================================================
-   ESTRUCTURA DEL NUEVO CARRUSEL DINÁMICO
-   ========================================================================== */
+ESTRUCTURA DEL NUEVO CARRUSEL DINÁMICO
+========================================================================== */
 
 .carrousel_container {
     width: 100%;
@@ -59,6 +61,7 @@ html {
     padding-left: 10px;
     transition: all 0.3s ease;
     width: fit-content;
+    position: relative;
 }
 
 .carrousel_title:hover {
@@ -89,7 +92,6 @@ html {
     position: relative;
 }
 
-/* Contenedor flexible que  alojalas tarjetas inyectadas por JS */
 .carousel_track {
     display: flex;
     gap: 20px;
@@ -149,8 +151,8 @@ html {
 }
 
 /* ==========================================================================
-   NAVEGACIÓN POR PUNTOS (DOTS)
-   ========================================================================== */
+NAVEGACIÓN POR PUNTOS (DOTS)
+========================================================================== */
 
 .dots_container {
     display: flex;
@@ -179,19 +181,18 @@ html {
 
 .dot_element.is-active {
     background: #22c55e;
-    /* Verde corporativo unificado con tu Modo Admin */
     transform: scale(1.25);
     box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
 }
 
 /* ==========================================================================
-   ESTILOS ADICIONALES PARA FLECHAS EN CONTENEDOR DE PUNTOS
-   ========================================================================== */
+ESTILOS ADICIONALES PARA FLECHAS EN CONTENEDOR DE PUNTOS
+========================================================================== */
 
 .arrow_element {
     background: transparent;
     border: none;
-    color: var(--text-white); /* Color blanco adaptado al fondo oscuro de tu portafolio */
+    color: var(--text-white);
     font-size: 1rem;
     cursor: pointer;
     padding: 0 10px;
@@ -203,16 +204,10 @@ html {
 }
 
 .arrow_element:hover:not(:disabled) {
-    color: var(--color-accent); /* Color celeste a juego con tus líneas de título */
+    color: var(--color-accent);
     transform: scale(1.15);
 }
 
-/* Espaciados específicos para separar las flechas de los puntos */
-.dots_container .arrow_group {
-    display: none; /* Eliminamos residuos antiguos si quedaban */
-}
-
-/* Ajustes de margen cuando los puntos están activos */
 .dots_container .dot_element:first-of-type {
     margin-left: 0.5rem;
 }
@@ -222,13 +217,14 @@ html {
 }
 
 /* ==========================================================================
-   FILTRO POR CATEGORIAS DE PROYECTOS
-   ========================================================================== */
+FILTRO POR CATEGORIAS DE PROYECTOS
+========================================================================== */
 
 .filter_dropdown {
     position: relative;
     display: inline-block;
     margin-top: 1.25rem;
+    z-index: 99999;
 }
 
 .filter_trigger {
@@ -277,7 +273,7 @@ html {
     white-space: nowrap;
     transform: translateX(-6px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-    z-index: 20;
+    z-index: 99999;
 }
 
 .filter_options::before {
@@ -332,44 +328,90 @@ html {
 .admin-editable[data-admin-id]:hover,
 .admin-editable[data-admin-img-id]:hover {
     outline: 2px dashed #22c55e;
-    /* Usamos un outline-offset para que el recuadro verde no se pegue al texto */
-    outline-offset: 3px; 
+    outline-offset: 3px;
     cursor: pointer;
 }
 
 /* --- RESPONSIVE DESIGN (ADAPTABILIDAD) --- */
 
-/* Tablets y pantallas medianas */
 @media (max-width: 1024px) {
     .card_3d {
-        /* En pantallas medianas calculamos espacio para albergar 2 tarjetas visibles */
         flex: 0 0 calc(50% - 15px);
     }
 }
 
-/* Dispositivos móviles */
 @media (max-width: 768px) {
-    document.body {
-        padding-top: 0px;
-        /* Ajustes por si la barra admin requiere espacio */
-    }
-
     .content {
         padding: 1rem;
+        overflow: visible !important;
+    }
+
+    .projects_header {
+        overflow: visible !important;
+        position: relative;
+        z-index: 99999;
     }
 
     .projects_header h1 {
         font-size: 1.8rem;
     }
 
-    /* En pantallas móviles se muestra 1 sola tarjeta abarcando el ancho */
     .card_3d {
         flex: 0 0 100%;
+    }
+
+    .filter_dropdown {
+        display: block !important;
+        width: 100% !important;
+        margin-top: 1rem !important;
+        position: relative !important;
+        z-index: 99999 !important;
+    }
+
+    .filter_trigger {
+        width: 100% !important;
+        justify-content: space-between !important;
+        padding: 0.75rem 1rem !important;
+        box-sizing: border-box !important;
+    }
+
+    .filter_options {
+        position: absolute !important;
+        top: calc(100% + 8px) !important;
+        left: 0 !important;
+        right: 0 !important;
+        display: none !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        background: #131C42 !important;
+        border: 1px solid rgba(122, 212, 255, 0.25) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6) !important;
+        white-space: normal !important;
+        transform: none !important;
+        padding: 0.5rem !important;
+        box-sizing: border-box !important;
+        z-index: 99999 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .filter_dropdown.is-open .filter_options {
+        display: flex !important;
+    }
+
+    .filter_chip {
+        text-align: center !important;
+        padding: 0.6rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .scene {
         gap: 0;
     }
+
+
 }
 
 @media (max-width: 480px) {
@@ -382,112 +424,8 @@ html {
         font-size: 0.78rem;
         padding: 0.35rem 0.75rem;
     }
-}
 
-/* ==========================================================================
-   FILTRO POR CATEGORIAS DE PROYECTOS
-   ========================================================================== */
 
-.filter_dropdown {
-    position: relative;
-    display: inline-block;
-    margin-top: 1.25rem;
-}
-
-.filter_trigger {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: inherit;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    background: var(--bg-card-glass);
-    border: 1px solid rgba(122, 212, 255, 0.25);
-    border-radius: 999px;
-    padding: 0.45rem 1.1rem;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.filter_trigger-icon {
-    flex-shrink: 0;
-    opacity: 0.8;
-}
-
-.filter_dropdown:hover .filter_trigger,
-.filter_dropdown:focus-within .filter_trigger,
-.filter_dropdown.is-open .filter_trigger {
-    color: var(--text-white);
-    border-color: rgba(122, 212, 255, 0.6);
-    background: rgba(122, 212, 255, 0.08);
-}
-
-.filter_options {
-    position: absolute;
-    top: 0;
-    left: calc(100% + 0.5rem);
-    display: flex;
-    flex-direction: row;
-    gap: 0.35rem;
-    padding: 0.6rem;
-    background: #131C42;
-    border: 1px solid rgba(122, 212, 255, 0.25);
-    border-radius: 999px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-    opacity: 0;
-    visibility: hidden;
-    white-space: nowrap;
-    transform: translateX(-6px);
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-    z-index: 20;
-}
-
-.filter_options::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -0.5rem;
-    bottom: 0;
-    width: 0.5rem;
-}
-
-.filter_dropdown:hover .filter_options,
-.filter_dropdown:focus-within .filter_options,
-.filter_dropdown.is-open .filter_options {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-}
-
-.filter_chip {
-    font-family: inherit;
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    background: transparent;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    padding: 0.4rem 0.85rem;
-    text-align: left;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.filter_chip:hover {
-    color: var(--text-white);
-    background: rgba(122, 212, 255, 0.1);
-    border-color: rgba(122, 212, 255, 0.3);
-}
-
-.filter_chip.is-active {
-    color: var(--bg-body);
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-}
-
-.filter_hidden {
-    display: none;
 }
 
 html.light-mode .filter_options {
