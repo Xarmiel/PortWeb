@@ -63,6 +63,23 @@ footer p {
         padding-bottom: 85px; /* IMPORTANTE: Da espacio extra abajo para que la barra no tape las tarjetas */
         gap: 1rem;
     }
+
+    header {
+    justify-content: flex-start;
+    padding-right: 4.5rem; /* Espacio para que el botón no tape el saludo */
+    }
+
+    header #theme-toggle-btn {
+        position: fixed !important;
+        top: calc(100vh - 72px) !important; 
+        right: 15px !important;
+        z-index: 1002 !important;
+        width: 44px !important;
+        height: 44px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+        background: var(--bg-sidebar) !important;
+        border: 2px solid var(--border-secondary) !important;
+    }
 }
 .scroll_fade {
     opacity: 0;
