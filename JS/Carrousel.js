@@ -6,25 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'residencial',
             title: 'Casa Arrescurrenaga',
             location: 'Tamaulipas',
-            image: '../Recursos/Casas/Arrescurrenaga1.png'
+            image: '../Recursos/Casas/Arrescurrenaga1.webp'
         },
         {
             category: 'residencial',
             title: 'Casa Montaño',
             location: 'Monterrey',
-            image: '../Recursos/Casas/Montaño.png'
+            image: '../Recursos/Casas/Montaño.webp'
         },
         {
             category: 'residencial',
             title: 'Casa Salaverry',
             location: 'Lima',
-            image: '../Recursos/Casas/Salaverry.png'
+            image: '../Recursos/Casas/Salaverry.webp'
         },
         {
             category: 'residencial',
             title: 'Residencia Alfa',
             location: 'Ica',
-            image: '../Recursos/Casas/Viviendafamiliares.png'
+            image: '../Recursos/Casas/Viviendafamiliares.webp'
         },
 
         // --- CATEGORÍA INDUSTRIAL / COMERCIAL ---
@@ -32,19 +32,19 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'comercial',
             title: 'Edificio Centro',
             location: 'Ciudad De México',
-            image: '../Recursos/Casas/Comercial1.png'
+            image: '../Recursos/Casas/Comercial1.webp'
         },
         {
             category: 'comercial',
             title: 'Edificio Sur',
             location: 'Monterrey',
-            image: '../Recursos/Casas/Comercial2.png'
+            image: '../Recursos/Casas/Comercial2.webp'
         },
         {
             category: 'comercial',
             title: 'Edificio Capital',
             location: 'Lima',
-            image: '../Recursos/Casas/Comercial3.png'
+            image: '../Recursos/Casas/Comercial3.webp'
         },
 
         // --- CATEGORÍA OBRAS PÚBLICAS ---
@@ -52,19 +52,19 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'publicas',
             title: 'Obra Publica 2020',
             location: 'Aguas Calientes',
-            image: '../Recursos/Casas/Obraspublicas1.png'
+            image: '../Recursos/Casas/Obraspublicas1.webp'
         },
         {
             category: 'publicas',
             title: 'Obra Publica 2023',
             location: 'Sinaloa',
-            image: '../Recursos/Casas/Obraspublicas2.png'
+            image: '../Recursos/Casas/Obraspublicas2.webp'
         },
         {
             category: 'publicas',
             title: 'Obra Publica 2026',
             location: 'Lima',
-            image: '../Recursos/Casas/Obraspublicas3.png'
+            image: '../Recursos/Casas/Obraspublicas3.webp'
         },
 
         // --- CATEGORÍA INTERIORES ---
@@ -72,19 +72,19 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'interiores',
             title: 'Cocina Integral',
             location: 'Lima, Perú',
-            image: '../Recursos/Interiores/Interior1.png'
+            image: '../Recursos/Interiores/Interior1.webp'
         },
         {
             category: 'interiores',
             title: 'Sala Minimalista',
             location: 'Monterrey, México',
-            image: '../Recursos/Interiores/Interior2.png'
+            image: '../Recursos/Interiores/Interior2.webp'
         },
         {
             category: 'interiores',
             title: 'Sala Integral',
             location: 'Lima, Perú',
-            image: '../Recursos/Interiores/Interior3.png'
+            image: '../Recursos/Interiores/Interior3.webp'
         }
     ];
 

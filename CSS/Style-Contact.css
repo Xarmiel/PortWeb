@@ -225,21 +225,21 @@
 
       /* Reemplaza la imagen de Facebook */
     .redes_list img[alt="Facebook"] {
-        content: url("../Recursos/FacebookMovile.png");
+        content: url("../Recursos/FacebookMovile.webp");
     }
 
       /* Reemplaza la imagen de Instagram */
     .redes_list img[alt="Instagram"] {
-        content: url("../Recursos/InstagramMovile.png"); 
+        content: url("../Recursos/InstagramMovile.webp"); 
     }
 
       /* Reemplaza la imagen de YouTube */
     .redes_list img[alt="Youtube"] {
-        content: url("../Recursos/YouTubeMovile.png"); 
+        content: url("../Recursos/YouTubeMovile.webp"); 
     }
 
       /* Reemplaza la imagen de TikTok */
     .redes_list img[alt="Tiktok"] {
-        content: url("../Recursos/TiktokMovile.png");
+        content: url("../Recursos/TiktokMovile.webp");
     }
 }

@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!ubicacionProyecto || ubicacionProyecto.trim() === "") return;
 
                     const rutaImagen = prompt("Ruta de la imagen (o deja vacío para subirla haciendo doble clic en la foto luego):");
-                    const imagenFinal = (rutaImagen && rutaImagen.trim() !== "") ? rutaImagen.trim() : '../Recursos/Casas/Viviendafamiliares.png';
+                    const imagenFinal = (rutaImagen && rutaImagen.trim() !== "") ? rutaImagen.trim() : '../Recursos/Casas/Viviendafamiliares.webp';
 
                     let tarjetasCreadas = JSON.parse(localStorage.getItem('adminTarjetasPersonalizadas')) || [];
                     
@@ -339,11 +339,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cardId.startsWith('custom-card-')) {
                 let tarjetasCreadas = JSON.parse(localStorage.getItem('adminTarjetasPersonalizadas')) || [];
                 tarjetasCreadas = tarjetasCreadas.map(t => {
-                    if (t.id === cardId) t.image = '../Recursos/Casas/Viviendafamiliares.png';
+                    if (t.id === cardId) t.image = '../Recursos/Casas/Viviendafamiliares.webp';
                     return t;
                 });
                 localStorage.setItem('adminTarjetasPersonalizadas', JSON.stringify(tarjetasCreadas));
-                elementoImg.src = '../Recursos/Casas/Viviendafamiliares.png';
+                elementoImg.src = '../Recursos/Casas/Viviendafamiliares.webp';
             } else {
                 localStorage.removeItem('img-card-path-' + cardId);
                 alert("Imagen restaurada. Recargando...");
